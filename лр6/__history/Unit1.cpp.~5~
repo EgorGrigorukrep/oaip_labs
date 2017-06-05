@@ -1,0 +1,295 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Form.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Tree::Tree(){
+	root=NULL;
+}
+
+TreeItem* Tree::getRoot(){ return root;}
+TreeItem** Tree::getRootAddress(){ return &root;}
+void Tree::setRoot(TreeItem* value){ root=value;}
+
+TreeItem* Tree::createNewItem(TEdit* EditNumber, TEdit* EditText){
+	TreeItem* newItem;
+	try{
+		newItem=new TreeItem;
+	}
+	catch(EOutOfMemory&){
+		ShowMessage("Нехватка оперативной памяти");
+		return NULL;
+	}
+
+	newItem->left=NULL;
+	newItem->right=NULL;
+	newItem->text=EditText->Text;
+	try{
+		newItem->number=StrToInt(EditNumber->Text);
+	}
+	catch(EConvertError&){
+		if (EditNumber->Text!="") {
+			ShowMessage("Введено недопустимое число "+EditNumber->Text);
+			int i,length=EditNumber->Text.Length();
+			AnsiString correct="";
+			for (i = 1; i <=length; i++) {
+				if (EditNumber->Text[i]>='0' && EditNumber->Text[i]<='9') {
+					correct+=EditNumber->Text[i];
+				}
+				else if (EditNumber->Text[i]=='-') {
+					correct+=EditNumber->Text[i];
+				}
+			}
+			EditNumber->Text=correct;
+			return NULL;
+		}
+		else{
+			newItem->number=0;
+        }
+	}
+	return newItem;
+}
+
+TreeItem* Tree::add(TreeItem* newItem, TreeItem* tempRoot){
+	if (tempRoot==NULL) {
+		tempRoot=newItem;
+		return tempRoot;
+	}
+	else{
+		if (tempRoot->number < newItem->number) {
+			tempRoot->right=add(newItem,tempRoot->right);
+		}
+		else if (tempRoot->number > newItem->number) {
+			tempRoot->left=add(newItem,tempRoot->left);
+		}
+		else if (tempRoot->number == newItem->number) {
+			if (tempRoot->text < newItem->text) {
+				tempRoot->right=add(newItem,tempRoot->right);
+			}
+			else if (tempRoot->text > newItem->text) {
+				tempRoot->left=add(newItem,tempRoot->left);
+			}
+		}
+		return tempRoot;
+	}
+}
+
+void Tree::addNodeToTreeView(TTreeView* TreeView, TreeItem* tempRoot, TTreeNode* Node){
+	if (tempRoot!=NULL){
+		TTreeNode* node;
+		node=TreeView->Items->AddChildObject(Node,tempRoot->text+" ("+IntToStr(tempRoot->number)+")",tempRoot);
+		node->Expanded=true;
+		addNodeToTreeView(TreeView,tempRoot->left,node);
+		addNodeToTreeView(TreeView,tempRoot->right,node);
+	}
+}
+
+void Tree::showInTreeView(TTreeView* TreeView){
+	TreeView->Items->Clear();
+
+	if (root!=NULL){
+		TTreeNode* node;
+		node=TreeView->Items->AddObject(NULL,root->text+" ("+IntToStr(root->number)+")",root);
+		node->Expand(true);
+		addNodeToTreeView(TreeView,root->left,node);
+		addNodeToTreeView(TreeView,root->right,node);
+	}
+
+	TreeView->FullExpand();
+}
+
+void Tree::find(TreeItem* searchItem, TreeItem* tempRoot, TreeItem** result,SearchMode mode){
+	static bool wasFound=false;
+
+	if (tempRoot==NULL) {
+		return;
+	}
+
+	if (mode==ByNumber || mode==ByBoth) {
+		if (searchItem->number > tempRoot->number) {
+			find(searchItem,tempRoot->right,result,mode);
+		}
+		if (searchItem->number < tempRoot->number) {
+			find(searchItem,tempRoot->left,result,mode);
+		}
+		if (searchItem->number == tempRoot->number) {
+			if (mode==ByBoth) {
+				if (searchItem->text==tempRoot->text) {
+					(*result)=tempRoot;
+					wasFound=true;
+				}
+			}
+			else{
+				wasFound=true;
+				(*result)=tempRoot;
+			}
+		}
+	}
+	else{
+		if (searchItem->text != tempRoot->text){
+			find(searchItem,tempRoot->left,result,mode);
+			if ((*result)==NULL) {
+				find(searchItem,tempRoot->right,result,mode);
+			}
+		}
+		else {
+			wasFound=true;
+			(*result)=tempRoot;
+        }
+    }
+}
+
+void Tree::directDetour(TreeItem* tempRoot, TMemo* Memo){
+	if (tempRoot==NULL) return;
+
+	if (tempRoot->right==NULL && tempRoot->left==NULL) {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+	}
+	else {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+		if (tempRoot->left!=NULL) {
+			directDetour(tempRoot->left,Memo);
+		}
+		if (tempRoot->right!=NULL) {
+			directDetour(tempRoot->right,Memo);
+		}
+	}
+}
+
+void Tree::reverseDetour(TreeItem* tempRoot, TMemo* Memo){
+	if (tempRoot==NULL) return;
+
+	if (tempRoot->right==NULL && tempRoot->left==NULL) {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+	}
+	else {
+		if (tempRoot->left!=NULL) {
+			reverseDetour(tempRoot->left,Memo);
+		}
+		if (tempRoot->right!=NULL) {
+			reverseDetour(tempRoot->right,Memo);
+		}
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+	}
+}
+
+void Tree::symmetricDetour(TreeItem* tempRoot,TMemo* Memo){
+	if (tempRoot==NULL) return;
+
+	if (tempRoot->right==NULL && tempRoot->left==NULL) {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+	}
+	else{
+		if (tempRoot->left!=NULL) {
+			symmetricDetour(tempRoot->left,Memo);
+		}
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+        if (tempRoot->right!=NULL) {
+			symmetricDetour(tempRoot->right,Memo);
+		}
+    }
+}
+
+void Tree::deleteItem(TreeItem* item,TreeItem* parent){
+	if (item!=parent) {
+		if (item->right==NULL && item->left==NULL) {
+			if (parent->right!=NULL && parent->right==item) {
+				parent->right=NULL;
+			}
+			else parent->left=NULL;
+		}
+		else if (item->right==NULL || item->left==NULL) {
+			if (parent->right!=NULL && parent->right==item) {
+				if (item->left!=NULL) {
+					parent->right=item->left;
+				}
+				else {
+					parent->right=item->right;
+				}
+			}
+			else{
+				if (item->left!=NULL) {
+					parent->left=item->left;
+				}
+				else {
+					parent->left=item->right;
+				}
+			}
+		}
+		else {
+			TreeItem* temp=item->right;
+			while (temp->left!=NULL){
+				temp=temp->left;
+			}
+			temp->left=item->left;
+			temp->right=item->right;
+
+			if (parent->left!=NULL && parent->left==item) {
+				parent->left=temp;
+			}
+			else parent->right=temp;
+
+			TreeItem* temp1=temp->right;
+			if (temp==temp1) {
+				temp->right=NULL;
+			}
+			else{
+				while (temp1->left!=temp){
+					temp1=temp1->left;
+				}
+			temp1->left=NULL;
+			}
+        }
+	}
+	else{
+		if (item->left==NULL && item->right==NULL) {
+			root=NULL;
+		}
+		else if (item->right==NULL) {
+			root=item->left;
+		}
+		else if (item->left==NULL) {
+			root=item->right;
+		}
+		else {
+			TreeItem* temp=item->right;
+			while (temp->left!=NULL){
+				temp=temp->left;
+			}
+			temp->left=item->left;
+			temp->right=item->right;
+
+			root=temp;
+
+			TreeItem* temp1=temp->right;
+			if (temp==temp1) {
+				temp->right=NULL;
+			}
+			else{
+				while (temp1->left!=temp){
+					temp1=temp1->left;
+				}
+			temp1->left=NULL;
+			}
+        }
+	}
+	delete item;
+}
+
+void Tree::deleteTree(TreeItem* tempRoot){
+	if (tempRoot==NULL) {
+		return;
+	}
+
+	if (tempRoot->left==NULL && tempRoot->right==NULL) {
+		delete tempRoot;
+	}
+	else {
+		deleteTree(tempRoot->left);
+		deleteTree(tempRoot->right);
+	}
+	root=NULL;
+}

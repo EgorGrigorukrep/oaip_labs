@@ -1,0 +1,15 @@
+//---------------------------------------------------------------------------
+
+#ifndef CircH
+#define CircH
+//---------------------------------------------------------------------------
+#endif
+class Circ{
+	public:
+		int cx,cy,r;
+		Circ(int cx1,int cy1,int r1);
+		void ris();
+		float plosh();
+		float perim();
+
+};

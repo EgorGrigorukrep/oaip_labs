@@ -1,0 +1,93 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UnitForm.h"
+//#include "UnitStack.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void pushingOperator(Stack stack, AnsiString result, char _operator){
+	char operation=stack.Pop();
+	result+=operation;
+	stack.Push(_operator);
+}
+
+bool isLastPriorityHigher(char lastOperator, char currentOperator){
+	if (lastOperator=='*' || lastOperator=='/'){
+		return true;
+	}
+	else if (lastOperator=='+' || lastOperator=='-') {
+		if (currentOperator=='+' || currentOperator=='-') {
+			return true;
+		}
+		/*else if (currentOperator=='(' || currentOperator==')') {
+			return true;
+		}     */
+		else return false;
+	}
+	/*else if (lastOperator=='(' || lastOperator==')') {
+		if (currentOperator=='(' || currentOperator==')') {
+			return true;
+		}
+		else return false;
+	}*/
+	else return false;
+}
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	Label7->Visible=true;
+	EditReverse->Visible=true;
+	LabelUsualResult->Visible=true;
+	LabelReverseResult->Visible=true;
+
+	Stack stack;
+	AnsiString text=Edit1->Text;
+	AnsiString result="";
+	int i,length=text.Length();
+
+	for (i = 1; i < length; i++) { ShowMessage(result);  //Memo1->Lines->Add(stack.Show());
+		if (text[i]>='a' && text[i]<='e') {
+			result+=text[i];
+		}
+		else if (text[i]=='*' || text[i]=='/') {
+			if (isLastPriorityHigher(stack.Peek(),text[i])==true) {
+				pushingOperator(stack, result, text[i]);
+			}
+			else stack.Push(text[i]);
+		}
+		else if (text[i]=='+' || text[i]=='-') {
+			if (isLastPriorityHigher(stack.Peek(),text[i])==true){
+				pushingOperator(stack, result, text[i]);
+			}
+			else stack.Push(text[i]);
+		}
+		else if (text[i]=='(') {
+			stack.Push(text[i]);
+		}
+		else if (text[i]==')') {
+			char operation='p';
+			while (1){
+				operation=stack.Pop();
+				if (operation!='(') {
+					result+=operation;
+				}
+				else break;
+			}
+		}
+	}
+
+	EditReverse->Text=result;
+}
+//---------------------------------------------------------------------------
+

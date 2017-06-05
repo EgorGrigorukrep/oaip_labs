@@ -1,0 +1,90 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Form.h"
+#include "UnitQueue.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+Queue queue;
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+	randomize();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::moveObjects(){
+	Label2->Top=ListBox1->Top+ListBox1->Height+5;
+	Edit1->Top=Label2->Top;
+	Button1->Top=Edit1->Top+Edit1->Height+5;
+	Button2->Top=Button1->Top;
+	Button3->Top=Button1->Top+Button1->Height+5;
+	Button4->Top=Button3->Top;
+}
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	ListBox1->Clear();
+	int number=random(100);
+	queue.addToQueue(number);
+	queue.showQueue(ListBox1);
+	moveObjects();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	if (Edit1->Text=="") {
+		Button1->Visible=false;
+		Button3->Visible=false;
+		Button4->Visible=false;
+		Label2->Visible=true;
+		Edit1->Visible=true;
+		Button2->Caption="Добавить";
+	}
+	else {
+		int number;
+		try{
+			number=StrToInt(Edit1->Text);
+		}
+		catch(...){
+			ShowMessage("Ввод осуществлен некорректно");
+			return;
+		}
+		Button1->Visible=true;
+		Button3->Visible=true;
+		Button4->Visible=true;
+		Label2->Visible=false;
+		Edit1->Visible=false;
+		Edit1->Text="";
+		Button2->Caption="Добавить введенное число";
+		queue.addToQueue(number);
+		ListBox1->Clear();
+		queue.showQueue(ListBox1);
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	queue.deleteQueue();
+	ListBox1->Clear();
+	queue.showQueue(ListBox1);
+	moveObjects();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	queue.retrieveFromQueue();
+    ListBox1->Clear();
+	queue.showQueue(ListBox1);
+	moveObjects();
+}
+//---------------------------------------------------------------------------

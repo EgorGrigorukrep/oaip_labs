@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+
+struct TreeItem{
+	TreeItem* right;
+	TreeItem* left;
+	AnsiString text;
+	int number;
+};
+
+class Tree{
+	protected: TreeItem* root;
+	public:
+		Tree();
+		TreeItem* getRoot();
+		TreeItem** getRootAddress();
+		void setRoot(TreeItem* value);
+		TreeItem* createNewItem(TEdit* EditNumber, TEdit* EditText);
+
+		TreeItem* add(TreeItem* newItem, TreeItem* tempRoot);
+		void find(TreeItem* searchItem, TreeItem* tempRoot, TreeItem** result);
+		void findParent(TreeItem* son, TreeItem* tempRoot, TreeItem** parent);
+		void deleteItem(TreeItem* item,TreeItem* tempRoot);
+
+		void showInTreeView(TTreeView* TreeView, TreeItem* tempRoot);
+		void directDetour(TreeItem* tempRoot, TMemo* Memo);
+		void reverseDetour(TreeItem* tempRoot,TMemo* Memo);
+		void symmetricDetour(TreeItem* tempRoot,TMemo* Memo);
+};

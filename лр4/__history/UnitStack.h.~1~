@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitStackH
+#define UnitStackH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+
+struct stackElement{
+	AnsiString info;
+	stackElement* next;
+};
+
+class Stack{
+	stackElement* head;
+
+	public:
+		Stack();
+
+		void Push(AnsiString info);
+		void Pop(AnsiString* info);
+		AnsiString Show();
+		~Stack();
+};

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2017.03.07 21:19:48.881,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017.03.07 21:19:48.885,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.03.07 21:20:04.753,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1PCH1.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2017.03.07 21:20:04.763,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cbproj=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2017.03.07 21:20:16.870,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2017.03.07 21:20:53.676,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017.03.07 21:26:52.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2017.03.07 21:26:52.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2017.03.07 21:36:28.403,D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cpp</Transaction>
+    <Transaction>2017.03.07 21:36:29.892,D:\учеба\ОАиП\лр вып 2\лр2\1\classProduction.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.h</Transaction>
+    <Transaction>2017.03.07 21:36:29.892,D:\учеба\ОАиП\лр вып 2\лр2\1\classProduction.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.cpp</Transaction>
+    <Transaction>2017.03.07 21:36:32.416,D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1PCH1.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1PCH1.h</Transaction>
+    <Transaction>2017.03.07 21:36:35.654,D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1.cbproj=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

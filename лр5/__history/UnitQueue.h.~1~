@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitQueueH
+#define UnitQueueH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+
+struct Item{
+	Item* next;
+	Item* previous;
+	int number;
+};
+
+class Queue {
+	protected:
+		Item* queueHead;
+		Item* queueTail;
+
+	public:
+		Queue();
+
+		void addToQueue(int number);
+		void retrieveFromQueue();
+		void showQueue(TListBox* ListBox);
+		void deleteQueue();
+};

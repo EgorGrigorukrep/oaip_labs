@@ -1,0 +1,21 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitListH
+#define UnitListH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+#include "UnitQueue.h"
+
+class List : public Queue{
+	public:
+		List();
+
+		void addItem(Item* item);
+		Item* findInList(int number);
+		void deleteItem(Item* item);
+
+		void breakInto2Lists(List* positiveList,List* negativeList);
+		void movePointers(Item* item2,Item* item3);
+		void sortList();
+};

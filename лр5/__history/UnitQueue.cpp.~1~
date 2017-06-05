@@ -1,0 +1,65 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UnitQueue.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+Queue::Queue(){
+	queueHead=NULL;
+	queueTail=NULL;
+}
+
+void Queue::addToQueue(int number){
+	Item* newItem=new Item();
+	newItem->next=NULL;
+	newItem->previous=NULL;
+	newItem->number=number;
+
+	if (queueHead==NULL && queueTail==NULL) {
+		queueHead=newItem;
+		queueTail=newItem;
+	}
+	else {
+		queueTail->next=newItem;
+		newItem->previous=queueTail;
+		queueTail=newItem;
+	}
+}
+
+void Queue::retrieveFromQueue(){
+	if (queueHead!=NULL) {
+		int number;
+		number=queueHead->number;
+		queueHead=queueHead->next;
+		if (queueHead==NULL) queueTail=NULL;
+	}
+}
+
+void Queue::showQueue(TListBox* ListBox){
+	Item* temp;
+	temp=queueHead;
+	ListBox->Height=3*ListBox->ItemHeight+2;
+	while (temp!=NULL){
+		ListBox->Items->Add(IntToStr(temp->number));
+		if (ListBox->Count>3 && ListBox->Count<=8) {
+			ListBox->Height+=ListBox->ItemHeight;
+		}
+		temp=temp->next;
+	}
+}
+
+void Queue::deleteQueue(){
+	if (queueHead==NULL) {
+		return;
+	}
+	Item* temp;
+	while (queueHead!=queueTail){
+		temp=queueHead;
+		queueHead=queueHead->next;
+		delete temp;
+	}
+	queueHead=NULL;
+	queueTail=NULL;
+}

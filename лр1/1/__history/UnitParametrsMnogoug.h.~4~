@@ -1,0 +1,172 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitParametrsMnogougH
+#define UnitParametrsMnogougH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TFormParametrsMnogoug : public TForm
+{
+__published:	// IDE-managed Components
+	TEdit *X1;
+	TLabel *Label1;
+	TLabel *Label2;
+	TEdit *Y1;
+	TLabel *Label3;
+	TLabel *A1;
+	TLabel *z1;
+	TLabel *A2;
+	TLabel *A3;
+	TLabel *A4;
+	TLabel *A5;
+	TLabel *A6;
+	TLabel *A7;
+	TLabel *A8;
+	TLabel *A9;
+	TLabel *A10;
+	TLabel *z2;
+	TLabel *z3;
+	TLabel *z4;
+	TLabel *z5;
+	TLabel *z6;
+	TLabel *z7;
+	TLabel *z8;
+	TLabel *z9;
+	TLabel *z10;
+	TEdit *X2;
+	TEdit *X3;
+	TEdit *X4;
+	TEdit *X5;
+	TEdit *X6;
+	TEdit *X7;
+	TEdit *X8;
+	TEdit *X9;
+	TEdit *X10;
+	TEdit *Y2;
+	TEdit *Y3;
+	TEdit *Y4;
+	TEdit *Y5;
+	TEdit *Y6;
+	TEdit *Y7;
+	TEdit *Y8;
+	TEdit *Y9;
+	TEdit *Y10;
+	TButton *Button1;
+	TLabel *Label4;
+	TShape *Shape1;
+	TLabel *Label5;
+	TLabel *dl1;
+	TShape *Shape2;
+	TLabel *dl2;
+	TLabel *dl3;
+	TLabel *dl4;
+	TLabel *dl5;
+	TLabel *dl6;
+	TLabel *dl7;
+	TLabel *dl8;
+	TLabel *dl9;
+	TLabel *dl10;
+	TEdit *d1;
+	TEdit *d2;
+	TEdit *d3;
+	TEdit *d4;
+	TEdit *d5;
+	TEdit *d6;
+	TEdit *d7;
+	TEdit *d8;
+	TEdit *d9;
+	TEdit *d10;
+	TLabel *Label16;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TEdit *s1;
+	TEdit *s2;
+	TEdit *s3;
+	TEdit *s4;
+	TEdit *s5;
+	TEdit *s6;
+	TEdit *s7;
+	TEdit *s8;
+	TLabel *sl1;
+	TLabel *sl2;
+	TLabel *sl3;
+	TLabel *sl4;
+	TLabel *sl5;
+	TLabel *sl6;
+	TLabel *sl7;
+	TLabel *sl8;
+	TShape *Shape3;
+	TLabel *Label6;
+	TEdit *r1;
+	TEdit *r2;
+	TEdit *r3;
+	TEdit *r4;
+	TEdit *r5;
+	TEdit *r6;
+	TEdit *r7;
+	TEdit *r8;
+	TLabel *rl1;
+	TLabel *rl2;
+	TLabel *rl3;
+	TLabel *rl4;
+	TLabel *rl5;
+	TLabel *rl6;
+	TLabel *rl7;
+	TLabel *rl8;
+	TShape *Shape4;
+	TLabel *Label15;
+	TLabel *Label7;
+	TEdit *Edit3;
+	TEdit *Edit4;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
+	TLabel *Label11;
+	TLabel *Label12;
+	TLabel *Label13;
+	TLabel *C1;
+	TLabel *zs1;
+	TLabel *C2;
+	TLabel *C3;
+	TLabel *C4;
+	TLabel *C5;
+	TLabel *C6;
+	TLabel *C7;
+	TLabel *C8;
+	TLabel *zs2;
+	TLabel *zs3;
+	TLabel *zs4;
+	TLabel *zs5;
+	TLabel *zs6;
+	TLabel *zs7;
+	TLabel *zs8;
+	TEdit *cx1;
+	TEdit *cy1;
+	TEdit *cx2;
+	TEdit *cx3;
+	TEdit *cx4;
+	TEdit *cx5;
+	TEdit *cx6;
+	TEdit *cx7;
+	TEdit *cx8;
+	TEdit *cy2;
+	TEdit *cy3;
+	TEdit *cy4;
+	TEdit *cy5;
+	TEdit *cy6;
+	TEdit *cy7;
+	TEdit *cy8;
+	TShape *Shape5;
+	void __fastcall Button1Click(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFormParametrsMnogoug(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormParametrsMnogoug *FormParametrsMnogoug;
+//---------------------------------------------------------------------------
+#endif

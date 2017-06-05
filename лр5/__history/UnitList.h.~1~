@@ -1,0 +1,14 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitListH
+#define UnitListH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+#include "UnitQueue.h"
+
+class List : public Queue{
+	public:
+		List();
+
+};

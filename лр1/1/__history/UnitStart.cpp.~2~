@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "Circ.h"
+#include "UnitStart.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+class Fig{
+	protected: int x,y;
+	public:
+		Fig(int x1,int y1){
+			x=x1;
+			y=y1;
+		}
+};
+
+/*void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	int x,y,r;
+	x=StrToInt(Edit1->Text);
+	y=StrToInt(Edit2->Text);
+	r=StrToInt(Edit3->Text);
+	Circ ob1(x,y,r);
+	ob1.ris();
+}*/
+//---------------------------------------------------------------------------
+

@@ -1,0 +1,74 @@
+//---------------------------------------------------------------------------
+
+#ifndef FormH
+#define FormH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.Grids.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Menus.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// IDE-managed Components
+	TStringGrid *StringGrid1;
+	TButton *ButtonAdd;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TEdit *Edit3;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TButton *ButtonShow;
+	TShape *Shape1;
+	TShape *Shape2;
+	TShape *Shape3;
+	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TEdit *EditProduction;
+	TEdit *EditCEH;
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TLabel *Label9;
+	TEdit *EditAmount;
+	TLabel *Label10;
+	TEdit *EditDelete;
+	TButton *Button4;
+	TButton *Button5;
+	TPopupMenu *PopupMenu1;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	void __fastcall ButtonAddClick(TObject *Sender);
+	void __fastcall ButtonShowClick(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall Edit1Click(TObject *Sender);
+	void __fastcall Edit2Click(TObject *Sender);
+	void __fastcall Edit3Click(TObject *Sender);
+	void __fastcall EditProductionClick(TObject *Sender);
+	void __fastcall EditCEHClick(TObject *Sender);
+	void __fastcall EditAmountClick(TObject *Sender);
+	void __fastcall EditDeleteClick(TObject *Sender);
+	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall FormActivate(TObject *Sender);
+	void __fastcall N1Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm1(TComponent* Owner);
+};
+void stringGridClear();
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

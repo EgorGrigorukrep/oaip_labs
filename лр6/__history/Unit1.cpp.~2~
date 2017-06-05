@@ -1,0 +1,51 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Form.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Tree::Tree(){
+	root=NULL;
+}
+
+TreeItem* Tree::getRoot(){ return root;}
+void Tree::setRoot(TreeItem* value){ root=value;}
+
+TreeItem* Tree::add(TreeItem* newItem, TreeItem* tempRoot){
+	if (tempRoot==NULL) {
+		tempRoot=newItem;
+		return tempRoot;
+	}
+	else{
+		if (tempRoot->number < newItem->number) {
+			tempRoot->right=add(newItem,tempRoot->right);
+		}
+		else if (tempRoot->number > newItem->number) {
+			tempRoot->left=add(newItem,tempRoot->left);
+		}
+		return tempRoot;
+	}
+}
+
+void Tree::showInTreeView(TTreeView* TreeView, TreeItem* tempRoot){
+	if (tempRoot->right==NULL && tempRoot->left==NULL) {
+		TreeView->Items->Add(NULL,tempRoot->text+" ("+StrToInt(tempRoot->number)+")");
+	}
+}
+
+void Tree::directDetour(TreeItem* tempRoot, TMemo* Memo){
+	if (tempRoot->right==NULL && tempRoot->left==NULL) {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+	}
+	else {
+		Memo->Lines->Add(tempRoot->text+" ("+IntToStr(tempRoot->number)+")");
+		if (tempRoot->left!=NULL) {
+			directDetour(tempRoot->left,Memo);
+		}
+		if (tempRoot->right!=NULL) {
+			directDetour(tempRoot->right,Memo);
+		}
+	}
+}

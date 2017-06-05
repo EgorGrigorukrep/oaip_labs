@@ -1,0 +1,398 @@
+object FormCircle: TFormCircle
+  Left = 0
+  Top = 0
+  Caption = 'FormCircle'
+  ClientHeight = 837
+  ClientWidth = 1206
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -21
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 24
+    Top = 8
+    Width = 201
+    Height = 25
+    Caption = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1099' '#1094#1077#1085#1090#1088#1072':'
+  end
+  object Label2: TLabel
+    Left = 17
+    Top = 39
+    Width = 27
+    Height = 25
+    Caption = 'X='
+  end
+  object Label3: TLabel
+    Left = 135
+    Top = 39
+    Width = 27
+    Height = 25
+    Caption = 'Y='
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 78
+    Width = 109
+    Height = 25
+    Caption = #1056#1072#1076#1080#1091#1089': R='
+  end
+  object Shape1: TShape
+    Left = 265
+    Top = 0
+    Width = 5
+    Height = 849
+    Brush.Color = clDefault
+  end
+  object Shape2: TShape
+    Left = 0
+    Top = 148
+    Width = 265
+    Height = 5
+    Brush.Color = clBlack
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 160
+    Width = 231
+    Height = 25
+    Caption = 'C'#1084#1077#1089#1090#1080#1090#1100' '#1094#1077#1085#1090#1088' '#1074' '#1090#1086#1095#1082#1091
+  end
+  object Label6: TLabel
+    Left = 6
+    Top = 191
+    Width = 38
+    Height = 25
+    Caption = 'X1='
+  end
+  object Label7: TLabel
+    Left = 138
+    Top = 191
+    Width = 38
+    Height = 25
+    Caption = 'Y1='
+  end
+  object Shape3: TShape
+    Left = 0
+    Top = 264
+    Width = 265
+    Height = 5
+    Brush.Color = clBlack
+  end
+  object Label8: TLabel
+    Left = 1
+    Top = 275
+    Width = 249
+    Height = 25
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1100' '#1086#1090#1085#1086#1089#1080#1090#1077#1083#1100#1085#1086' '
+  end
+  object Label9: TLabel
+    Left = 0
+    Top = 306
+    Width = 99
+    Height = 25
+    Caption = #1090#1086#1095#1082#1080' X2='
+  end
+  object Label10: TLabel
+    Left = 157
+    Top = 306
+    Width = 38
+    Height = 25
+    Caption = 'Y2='
+  end
+  object Label11: TLabel
+    Left = 0
+    Top = 336
+    Width = 180
+    Height = 25
+    Caption = #1059#1075#1086#1083' '#1087#1086#1074#1086#1088#1086#1090#1072': a='
+  end
+  object Shape4: TShape
+    Left = 1
+    Top = 404
+    Width = 265
+    Height = 5
+    Brush.Color = clBlack
+  end
+  object Label12: TLabel
+    Left = 225
+    Top = 333
+    Width = 7
+    Height = 16
+    Caption = #1086
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 40
+    Top = 415
+    Width = 185
+    Height = 25
+    Caption = #1052#1072#1089#1096#1090#1072#1073#1080#1088#1086#1074#1072#1085#1080#1077' '
+  end
+  object Label14: TLabel
+    Left = 31
+    Top = 438
+    Width = 201
+    Height = 25
+    Caption = #1086#1090#1085#1086#1089#1080#1090#1077#1083#1100#1085#1086' '#1090#1086#1095#1082#1080':'
+  end
+  object Label15: TLabel
+    Left = 8
+    Top = 472
+    Width = 38
+    Height = 25
+    Caption = 'X3='
+  end
+  object Label16: TLabel
+    Left = 133
+    Top = 472
+    Width = 38
+    Height = 25
+    Caption = 'Y3='
+  end
+  object Shape5: TShape
+    Left = 1
+    Top = 611
+    Width = 265
+    Height = 5
+    Brush.Color = clBlack
+  end
+  object Label17: TLabel
+    Left = 0
+    Top = 508
+    Width = 7
+    Height = 25
+  end
+  object Label18: TLabel
+    Left = 1
+    Top = 508
+    Width = 175
+    Height = 50
+    Caption = '   '#1050#1086#1101#1092#1092#1080#1094#1080#1077#1085#1090' '#1084#1072#1089#1096#1090#1072#1073#1080#1088#1086#1074#1072#1085#1080#1103
+    WordWrap = True
+  end
+  object Label19: TLabel
+    Left = 187
+    Top = 523
+    Width = 27
+    Height = 25
+    Caption = 'n='
+  end
+  object Edit1: TEdit
+    Left = 50
+    Top = 39
+    Width = 82
+    Height = 30
+    TabOrder = 0
+    Text = '0'
+    OnClick = Edit1Click
+    OnEnter = Edit1Enter
+    OnExit = Edit1Exit
+  end
+  object Edit2: TEdit
+    Left = 168
+    Top = 39
+    Width = 82
+    Height = 30
+    TabOrder = 1
+    Text = '0'
+    OnClick = Edit2Click
+    OnEnter = Edit2Enter
+    OnExit = Edit2Exit
+  end
+  object Edit3: TEdit
+    Left = 123
+    Top = 78
+    Width = 127
+    Height = 30
+    TabOrder = 2
+    Text = '0'
+    OnClick = Edit3Click
+    OnEnter = Edit3Enter
+    OnExit = Edit3Exit
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 109
+    Width = 251
+    Height = 33
+    Caption = #1053#1072#1088#1080#1089#1086#1074#1072#1090#1100
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 191
+    Top = 622
+    Width = 74
+    Height = 57
+    Caption = #1053#1072#1079#1072#1076
+    TabOrder = 17
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 8
+    Top = 622
+    Width = 177
+    Height = 114
+    Caption = #1055#1086#1082#1072#1079#1072#1090#1100' '#1084#1072#1090#1077#1084#1072#1090#1080#1095#1077#1089#1082#1080#1077' '#1087#1072#1088#1072#1084#1077#1090#1088#1099' '#1092#1080#1075#1091#1088#1099
+    TabOrder = 16
+    WordWrap = True
+    OnClick = Button3Click
+  end
+  object Edit4: TEdit
+    Left = 50
+    Top = 191
+    Width = 82
+    Height = 30
+    TabOrder = 4
+    Text = '0'
+    OnClick = Edit4Click
+    OnEnter = Edit4Enter
+    OnExit = Edit4Exit
+  end
+  object Edit5: TEdit
+    Left = 177
+    Top = 191
+    Width = 82
+    Height = 30
+    TabOrder = 5
+    Text = '0'
+    OnClick = Edit5Click
+    OnEnter = Edit5Enter
+    OnExit = Edit5Exit
+  end
+  object Button4: TButton
+    Left = 0
+    Top = 224
+    Width = 259
+    Height = 34
+    Caption = #1057#1084#1077#1089#1090#1080#1090#1100
+    TabOrder = 6
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 191
+    Top = 685
+    Width = 74
+    Height = 51
+    Caption = #1042#1099#1093#1086#1076
+    TabOrder = 18
+    OnClick = Button5Click
+  end
+  object Edit6: TEdit
+    Left = 95
+    Top = 304
+    Width = 59
+    Height = 30
+    TabOrder = 7
+    Text = '0'
+    OnClick = Edit6Click
+    OnEnter = Edit6Enter
+    OnExit = Edit6Exit
+  end
+  object Edit7: TEdit
+    Left = 191
+    Top = 304
+    Width = 68
+    Height = 30
+    TabOrder = 8
+    Text = '0'
+    OnClick = Edit7Click
+    OnEnter = Edit7Enter
+    OnExit = Edit7Exit
+  end
+  object Button6: TButton
+    Left = 1
+    Top = 367
+    Width = 258
+    Height = 31
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1100
+    TabOrder = 10
+    OnClick = Button6Click
+  end
+  object Edit8: TEdit
+    Left = 177
+    Top = 337
+    Width = 48
+    Height = 30
+    TabOrder = 9
+    Text = '0'
+    OnClick = Edit8Click
+    OnEnter = Edit8Enter
+    OnExit = Edit8Exit
+  end
+  object Button7: TButton
+    Left = 8
+    Top = 568
+    Width = 116
+    Height = 37
+    Caption = #1059#1074#1077#1083#1080#1095#1080#1090#1100
+    TabOrder = 14
+    OnClick = Button7Click
+  end
+  object Button8: TButton
+    Left = 142
+    Top = 568
+    Width = 117
+    Height = 37
+    Caption = #1059#1084#1077#1085#1100#1096#1080#1090#1100
+    TabOrder = 15
+  end
+  object Edit9: TEdit
+    Left = 52
+    Top = 469
+    Width = 83
+    Height = 33
+    TabOrder = 11
+    Text = '0'
+  end
+  object Edit10: TEdit
+    Left = 168
+    Top = 469
+    Width = 82
+    Height = 33
+    TabOrder = 12
+    Text = '0'
+  end
+  object Edit11: TEdit
+    Left = 211
+    Top = 520
+    Width = 39
+    Height = 33
+    TabOrder = 13
+    Text = '1'
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer1Timer
+    Left = 824
+    Top = 384
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer2Timer
+    Left = 824
+    Top = 440
+  end
+  object Timer3: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = Timer3Timer
+    Left = 824
+    Top = 496
+  end
+end

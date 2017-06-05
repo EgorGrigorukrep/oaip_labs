@@ -1,0 +1,158 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 489
+  ClientWidth = 887
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -24
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 29
+  object Label1: TLabel
+    Left = 65
+    Top = 29
+    Width = 227
+    Height = 29
+    Caption = #1042#1074#1077#1076#1080#1090#1077' '#1074#1099#1088#1072#1078#1072#1085#1080#1077
+  end
+  object Label5: TLabel
+    Left = 182
+    Top = 199
+    Width = 30
+    Height = 29
+    Caption = 'd='
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 60
+    Top = 199
+    Width = 30
+    Height = 29
+    Caption = 'a='
+    Visible = False
+  end
+  object Label3: TLabel
+    Left = 60
+    Top = 237
+    Width = 30
+    Height = 29
+    Caption = 'b='
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 182
+    Top = 240
+    Width = 30
+    Height = 29
+    Caption = 'e='
+    Visible = False
+  end
+  object Label6: TLabel
+    Left = 60
+    Top = 275
+    Width = 28
+    Height = 29
+    Caption = 'c='
+    Visible = False
+  end
+  object Label7: TLabel
+    Left = 504
+    Top = 29
+    Width = 326
+    Height = 29
+    Caption = #1054#1073#1088#1072#1090#1085#1072#1103' '#1079#1072#1087#1080#1089#1100' '#1074#1099#1088#1072#1078#1077#1085#1080#1103
+    Visible = False
+  end
+  object LabelUsualResult: TLabel
+    Left = 504
+    Top = 168
+    Width = 8
+    Height = 29
+    Visible = False
+  end
+  object LabelReverseResult: TLabel
+    Left = 504
+    Top = 216
+    Width = 8
+    Height = 29
+  end
+  object Edit1: TEdit
+    Left = 65
+    Top = 64
+    Width = 227
+    Height = 37
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 140
+    Top = 120
+    Width = 57
+    Height = 37
+    Caption = #1054#1050
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object EditD: TEdit
+    Left = 218
+    Top = 196
+    Width = 73
+    Height = 32
+    TabOrder = 2
+    Visible = False
+  end
+  object EditA: TEdit
+    Left = 96
+    Top = 196
+    Width = 73
+    Height = 32
+    TabOrder = 3
+    Visible = False
+  end
+  object EditB: TEdit
+    Left = 96
+    Top = 234
+    Width = 73
+    Height = 32
+    TabOrder = 4
+    Visible = False
+  end
+  object EditE: TEdit
+    Left = 218
+    Top = 234
+    Width = 73
+    Height = 32
+    TabOrder = 5
+    Visible = False
+  end
+  object EditC: TEdit
+    Left = 96
+    Top = 272
+    Width = 73
+    Height = 32
+    TabOrder = 6
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 218
+    Top = 275
+    Width = 73
+    Height = 29
+    Caption = #1054#1050
+    TabOrder = 7
+    Visible = False
+    OnClick = Button2Click
+  end
+  object EditReverse: TEdit
+    Left = 504
+    Top = 64
+    Width = 227
+    Height = 37
+    TabOrder = 8
+    Visible = False
+  end
+end

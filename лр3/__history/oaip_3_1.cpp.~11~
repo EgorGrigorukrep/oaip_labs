@@ -1,0 +1,13 @@
+#include <vcl.h>
+#include <tchar.h>
+#pragma hdrstop
+
+USEFORM("Form.cpp", Form1);
+
+int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int) {
+	Application->Initialize();
+	Application->MainFormOnTaskBar = true;
+	Application->CreateForm(__classid(TForm1), &Form1);
+	Application->Run();
+	return 0;
+}

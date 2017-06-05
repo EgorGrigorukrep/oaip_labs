@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "UnitStart.h"
+#include "UnitMnogoug.h"
+#include "UnitChisloVershin.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+int n;
+TForm2 *Form2;
+//---------------------------------------------------------------------------
+__fastcall TForm2::TForm2(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Edit1Click(TObject *Sender)
+{	Edit1->Text="";}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Edit1Enter(TObject *Sender)
+{	Edit1->Text="";}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Edit1Exit(TObject *Sender)
+{	if (Edit1->Text=="") Edit1->Text="3";}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Button1Click(TObject *Sender)
+{
+	n=StrToInt(Edit1->Text);
+	FormMnogoug->Show();
+	FormChisloVershin->Close();
+}
+//---------------------------------------------------------------------------

@@ -1,0 +1,45 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UnitStack.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Stack::Stack(){
+	head=NULL;
+}
+
+void Stack::Push(AnsiString info){
+	stackElement* newElement=new stackElement();
+	newElement->info=info;
+	newElement->next=head;
+	head=newElement;
+	delete newElement;
+}
+
+void Stack::Pop(AnsiString* info){
+	*info=head->info;
+	stackElement* temp=new stackElement();
+	temp=head;
+	head=head->next;
+	delete temp;
+}
+
+AnsiString Stack::Show(){
+	stackElement* temp=new stackElement();
+	temp=head;
+	AnsiString stackInfo="";
+	while (temp!=NULL){
+		stackInfo+=temp->info+"___";
+	}
+	delete temp;
+}
+
+Stack::~Stack(){
+	stackElement* temp;
+	while (head!=NULL){
+		temp=head;
+		head=head->next;
+		delete temp;
+	}
+}

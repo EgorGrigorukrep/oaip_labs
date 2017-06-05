@@ -1,0 +1,50 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'FormChisloVershin'
+  ClientHeight = 167
+  ClientWidth = 339
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -21
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 307
+    Height = 25
+    Caption = #1063#1080#1089#1083#1086' '#1074#1077#1088#1096#1080#1085' '#1084#1085#1086#1075#1086#1091#1075#1086#1083#1100#1085#1080#1082#1072':'
+  end
+  object Label2: TLabel
+    Left = 122
+    Top = 56
+    Width = 27
+    Height = 25
+    Caption = 'n='
+  end
+  object Edit1: TEdit
+    Left = 155
+    Top = 53
+    Width = 40
+    Height = 33
+    TabOrder = 0
+    Text = '3'
+    OnClick = Edit1Click
+    OnEnter = Edit1Enter
+    OnExit = Edit1Exit
+  end
+  object Button1: TButton
+    Left = 112
+    Top = 104
+    Width = 105
+    Height = 41
+    Caption = #1044#1072#1083#1077#1077
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+end

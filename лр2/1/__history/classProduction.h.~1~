@@ -1,0 +1,20 @@
+//---------------------------------------------------------------------------
+
+#ifndef classProductionH
+#define classProductionH
+//---------------------------------------------------------------------------
+#endif
+class Production{
+	private:
+		char name[20];
+		int amount;
+		int numberOfCEH;
+	public:
+		Production(const char* n,int a, int number);
+		char* getName();
+		void setName(char*);
+		int getAmount();
+		void setAmount(int a);
+		int getNumberOfCEH();
+		void setNumberOfCEH(int number);
+}

@@ -1,0 +1,88 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 514
+  ClientWidth = 869
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -21
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 88
+    Top = 9
+    Width = 83
+    Height = 25
+    Caption = #1054#1095#1077#1088#1077#1076#1100
+  end
+  object Label2: TLabel
+    Left = 48
+    Top = 120
+    Width = 72
+    Height = 30
+    Caption = #1063#1080#1089#1083#1086': '
+    Visible = False
+  end
+  object ListBox1: TListBox
+    Left = 24
+    Top = 40
+    Width = 232
+    Height = 75
+    ItemHeight = 25
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 155
+    Width = 113
+    Height = 81
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1083#1091#1095#1072#1081#1085#1086#1077' '#1095#1080#1089#1083#1086
+    TabOrder = 1
+    WordWrap = True
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 143
+    Top = 155
+    Width = 113
+    Height = 81
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1074#1074#1077#1076#1077#1085#1085#1086#1077'  '#1095#1080#1089#1083#1086
+    TabOrder = 2
+    WordWrap = True
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 242
+    Width = 113
+    Height = 80
+    Caption = #1059#1076#1072#1083#1080#1090#1100' '#1086#1095#1077#1088#1077#1076#1100
+    TabOrder = 3
+    WordWrap = True
+    OnClick = Button3Click
+  end
+  object Edit1: TEdit
+    Left = 143
+    Top = 120
+    Width = 113
+    Height = 30
+    TabOrder = 4
+    Visible = False
+  end
+  object Button4: TButton
+    Left = 143
+    Top = 242
+    Width = 113
+    Height = 80
+    Caption = #1048#1079#1074#1083#1077#1095#1100' '#1080#1079' '#1086#1095#1077#1088#1077#1076#1080
+    TabOrder = 5
+    WordWrap = True
+    OnClick = Button4Click
+  end
+end

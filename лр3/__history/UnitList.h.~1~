@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitListH
+#define UnitListH
+//---------------------------------------------------------------------------
+#endif
+struct ListElement{
+	AnsiString Name;
+	int Amount;
+	int CehNumber;
+
+	ListElement *Next;
+};
+
+class List{
+	private: ListElement *Head,*First;
+	public:
+		List();
+		~List();
+		void addElement();
+		void showList();
+};

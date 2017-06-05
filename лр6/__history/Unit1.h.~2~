@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+
+struct TreeItem{
+	TreeItem* right;
+	TreeItem* left;
+	AnsiString text;
+	int number;
+};
+
+
+class Tree{
+	protected: TreeItem* root;
+	public:
+		Tree();
+		TreeItem* getRoot();
+		void setRoot(TreeItem* value);
+
+		TreeItem* add(TreeItem* newItem, TreeItem* tempRoot);
+		void showInTreeView(TTreeView* TreeView, TreeItem* tempRoot);
+		void directDetour(TreeItem* tempRoot, TMemo* Memo);
+};

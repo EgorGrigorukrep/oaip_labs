@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.416,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1PCH1.h=D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.h=D:\учеба\ОАиП\лр вып 2\лр2\1\classProduction.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\File1.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.676,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.885,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\classProduction.cpp=D:\учеба\ОАиП\лр вып 2\лр2\1\classProduction.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.403,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cpp=D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.763,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.753,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,=C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.654,C:\Users\egich\OneDrive\Документы\Embarcadero\Studio\Projects\oaip_2_1.cbproj=D:\учеба\ОАиП\лр вып 2\лр2\1\oaip_2_1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

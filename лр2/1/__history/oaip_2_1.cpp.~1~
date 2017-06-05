@@ -1,0 +1,26 @@
+#pragma hdrstop
+#pragma argsused
+
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+#include "classProduction.h"
+
+ int _tmain(int argc, _TCHAR* argv[]) 
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int n;
+	printf("Количество элементов массива: ");
+	scanf("%d",&n);
+	Production *mas=new Production[n];
+	getch();
+	return 0;
+}

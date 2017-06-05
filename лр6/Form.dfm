@@ -1,0 +1,216 @@
+object Form1: TForm1
+  Left = 329
+  Top = 247
+  Caption = 'Form1'
+  ClientHeight = 473
+  ClientWidth = 886
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel
+    Left = 408
+    Top = 305
+    Width = 41
+    Height = 19
+    Caption = #1058#1077#1082#1089#1090
+  end
+  object Label2: TLabel
+    Left = 408
+    Top = 339
+    Width = 44
+    Height = 19
+    Caption = #1063#1080#1089#1083#1086
+  end
+  object TreeView1: TTreeView
+    Left = 408
+    Top = 33
+    Width = 209
+    Height = 252
+    Indent = 19
+    TabOrder = 0
+    OnClick = TreeView1Click
+  end
+  object StringGrid1: TStringGrid
+    Left = 24
+    Top = 33
+    Width = 306
+    Height = 252
+    ColCount = 2
+    DefaultColWidth = 150
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+    ScrollBars = ssNone
+    TabOrder = 1
+    OnSelectCell = StringGrid1SelectCell
+    OnSetEditText = StringGrid1SetEditText
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 296
+    Width = 186
+    Height = 41
+    Caption = #1057#1092#1086#1088#1084#1080#1088#1086#1074#1072#1090#1100' '#1076#1077#1088#1077#1074#1086
+    TabOrder = 2
+    WordWrap = True
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 640
+    Top = 33
+    Width = 185
+    Height = 252
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 24
+    Top = 390
+    Width = 89
+    Height = 50
+    Hint = #1050#1086#1088#1077#1085#1100' -> '#1083#1077#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086' -> '#1087#1088#1072#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086
+    Caption = #1055#1088#1103#1084#1086#1081' '#1086#1073#1093#1086#1076
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+    WordWrap = True
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 121
+    Top = 390
+    Width = 89
+    Height = 50
+    Hint = #1051#1077#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086' -> '#1087#1088#1072#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086' -> '#1082#1086#1088#1077#1085#1100
+    Caption = #1054#1073#1088#1072#1090#1085#1099#1081' '#1086#1073#1093#1086#1076
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+    WordWrap = True
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 24
+    Top = 343
+    Width = 186
+    Height = 41
+    Hint = #1051#1077#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086' -> '#1082#1086#1088#1077#1085#1100' -> '#1087#1088#1072#1074#1086#1077' '#1087#1086#1076#1076#1077#1088#1077#1074#1086
+    Caption = #1057#1080#1084#1084#1077#1090#1088#1080#1095#1085#1099#1081' '#1086#1073#1093#1086#1076
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+    WordWrap = True
+    OnClick = Button4Click
+  end
+  object Edit1: TEdit
+    Left = 472
+    Top = 302
+    Width = 145
+    Height = 27
+    TabOrder = 7
+  end
+  object Edit2: TEdit
+    Left = 472
+    Top = 335
+    Width = 145
+    Height = 27
+    TabOrder = 8
+  end
+  object Button5: TButton
+    Left = 408
+    Top = 368
+    Width = 97
+    Height = 32
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+    TabOrder = 9
+    OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 520
+    Top = 368
+    Width = 97
+    Height = 33
+    Caption = #1053#1072#1081#1090#1080
+    TabOrder = 10
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 535
+    Top = 254
+    Width = 82
+    Height = 30
+    Caption = #1059#1076#1072#1083#1080#1090#1100
+    TabOrder = 11
+    Visible = False
+    OnClick = Button7Click
+  end
+  object Edit3: TEdit
+    Left = 408
+    Top = 255
+    Width = 121
+    Height = 27
+    TabOrder = 12
+    Visible = False
+  end
+  object Button8: TButton
+    Left = 216
+    Top = 343
+    Width = 114
+    Height = 41
+    Caption = #1055#1086#1082#1072#1079#1072#1090#1100
+    TabOrder = 13
+    WordWrap = True
+    OnClick = Button8Click
+  end
+  object Button9: TButton
+    Left = 216
+    Top = 296
+    Width = 114
+    Height = 41
+    Caption = #1057#1083#1091#1095#1072#1081#1085#1086#1077' '#1076#1077#1088#1077#1074#1086
+    TabOrder = 14
+    WordWrap = True
+    OnClick = Button9Click
+  end
+  object Button10: TButton
+    Left = 216
+    Top = 390
+    Width = 114
+    Height = 50
+    Caption = #1059#1076#1072#1083#1080#1090#1100' '#1076#1077#1088#1077#1074#1086
+    TabOrder = 15
+    WordWrap = True
+    OnClick = Button10Click
+  end
+  object Button11: TButton
+    Left = 671
+    Top = 305
+    Width = 121
+    Height = 65
+    Caption = #1053#1072#1081#1090#1080' '#1095#1080#1089#1083#1086' '#1083#1080#1089#1090#1100#1077#1074' '#1085#1072' '#1091#1088#1086#1074#1085#1103#1093
+    TabOrder = 16
+    WordWrap = True
+    OnClick = Button11Click
+  end
+  object StringGrid2: TStringGrid
+    Left = 640
+    Top = 33
+    Width = 217
+    Height = 252
+    ColCount = 2
+    DefaultColWidth = 100
+    FixedCols = 0
+    ScrollBars = ssNone
+    TabOrder = 17
+    Visible = False
+  end
+end

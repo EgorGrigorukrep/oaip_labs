@@ -1,0 +1,33 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include "Aircraft.h"
+#include "Schedule.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Schedule::Schedule(){
+	flightNumber=0;
+	destination="";
+	distance=0;
+	plane=new Aircraft();
+	beginTimeMinutes=0;
+	beginTypeHours=0;
+	endTimeMinutes=0;
+	endTimeHours=0;
+}
+int Schedule::getFlightNumber(){return flightNumber;}
+void Schedule::setFlightNumber(int fnum){ flightNumber=fnum;}
+char* Schedule::getDestination(){return destination;}
+void Schedule::setDestination(char* dest){ int i=0; while(dest[i]!='\0') {destination[i]=dest[i]; i++;}}
+int Schedule::getDistance(){ return distance;}
+void Schedule::setDistance(int dist){ distance=dist;}
+Aircraft Schedule::getPlane(){return plane;}
+void Schedule::setPlane(Aircraft pl){ plane=pl;}
+int Schedule::getBeginTimeMinutes(){return beginTimeMinutes;}
+void Schedule::setBeginTimeMinutes(int btm){ beginTimeMinutes=btm;}
+int Schedule::getBeginTimeHours(){return beginTimeHours;}
+void Schedule::setBeginTimeHours(int bth){ beginTimeHours=bth;}
+int Schedule::getEndTimeHours(){return endTimeHours;}
+void Schedule::setEndTimeHours(int eth){ endTimeHours=eth;}
+int Schedule::getEndTimeMinutes(){return endTimeMinutes;}
+void Schedule::setEndTimeMinutes(int etm){ endTimeMinutes=etm;}

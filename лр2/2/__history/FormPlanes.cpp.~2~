@@ -1,0 +1,159 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "Schedule.h"
+#include "Form.h"
+#include "FormPlanes.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormPlane *FormPlane;
+//---------------------------------------------------------------------------
+__fastcall TFormPlane::TFormPlane(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+AnsiString FilePlanesNumber="d:\\учеба\\ОАиП\\лр вып 2\\лр2\\2\\planesNumber.txt";
+AnsiString FilePlanes="d:\\учеба\\ОАиП\\лр вып 2\\лр2\\2\\planes.txt";
+int counter=0;
+void __fastcall TFormPlane::FormActivate(TObject *Sender)
+{
+	Button1->Click();
+	TFileStream* f;
+	int amount;
+	f=new TFileStream(FilePlanesNumber,fmOpenRead);
+	f->Read(&amount,sizeof(int));
+	delete f;
+	StringGrid1->RowCount=amount+1;
+	StringGrid1->ColCount=3;
+	if (StringGrid1->DefaultRowHeight*(amount+1)<300) StringGrid1->Height=StringGrid1->DefaultRowHeight*(amount+1)+amount;
+	else StringGrid1->Height=300+amount;
+	StringGrid1->Cells[0][0]="Тип самолета";
+	StringGrid1->Cells[1][0]="Год выпуска";
+	StringGrid1->Cells[2][0]="Расход топлива";
+	Aircraft* planes=new Aircraft[amount];
+	f=new TFileStream(FilePlanes,fmOpenReadWrite);
+	f->Read(planes,sizeof(class Aircraft)*amount);
+	int i;
+	for (i = 0; i < amount; i++) {
+		StringGrid1->Cells[0][i+1]=planes[i].getType();
+		StringGrid1->Cells[1][i+1]=IntToStr(planes[i].getYear());
+		StringGrid1->Cells[2][i+1]=IntToStr(planes[i].getFuel());
+	}
+	delete f;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPlane::Button1Click(TObject *Sender)
+{
+	if (!FileExists(FilePlanesNumber)) {
+		TFileStream* f=new TFileStream(FilePlanesNumber,fmCreate);
+		int a=0;
+		f->Write(&a,sizeof(int));
+		delete f;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPlane::Button2Click(TObject *Sender)
+{
+	Label1->Left=StringGrid1->Left-Label1->Width;
+	Label1->Top= StringGrid1->Top+StringGrid1->Height;
+	Edit1->Left=StringGrid1->Left;
+	Edit1->Top=StringGrid1->Top+StringGrid1->Height;
+	Edit2->Left=Edit1->Left+Edit1->Width;
+	Edit2->Top=StringGrid1->Top+StringGrid1->Height;
+	Edit3->Left=Edit2->Left+Edit2->Width;
+	Edit3->Top=StringGrid1->Top+StringGrid1->Height;
+	Button4->Top=StringGrid1->Top+StringGrid1->Height;
+	Button4->Left=Edit3->Left+Edit3->Width;
+	Edit1->Visible=true;
+	Edit2->Visible=true;
+	Edit3->Visible=true;
+	Label1->Visible=true;
+	Button4->Visible=true;
+	Edit1->Font->Color=clGray;
+	Edit2->Font->Color=clGray;
+	Edit3->Font->Color=clGray;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPlane::Edit1Exit(TObject *Sender)
+{
+	if (Edit1->Text!="" && Edit2->Text!="") {
+		if (Edit3->Text!="") {
+			Button4->Visible=true;
+		}
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormPlane::Button4Click(TObject *Sender)
+{
+	if (Edit1->Text!="" && Edit2->Text!="") {
+		if (Edit3->Text!="") {
+			Button4->Visible=false;
+			TFileStream* f;
+			f=new TFileStream(FilePlanesNumber,fmOpenRead);
+			int amount;
+			f->Read(&amount,sizeof(int));
+			delete f;
+			f=new TFileStream(FilePlanes,fmOpenRead);
+			Aircraft* arrayPlanes=new Aircraft[amount+1];
+			f->Read(arrayPlanes,sizeof(class Aircraft)*amount);
+			delete f;
+			f=new TFileStream(FilePlanes,fmOpenWrite);
+			char str[20];
+			int i;
+			amount+=1;
+			AnsiString string=Edit1->Text;
+			for (i = 1; i<=counter; i++) {
+				str[i-1]=string[i];
+				if (i>=19) {
+					break;
+				}
+			}
+			for (; i <= 19; i+=1) {
+				str[i-1]=' ';
+			}
+			str[19]='\0';
+			counter=0;
+			arrayPlanes[amount-1].setType(str);
+			arrayPlanes[amount-1].setYear(StrToInt(Edit2->Text));
+			arrayPlanes[amount-1].setFuel(StrToInt(Edit3->Text));
+			f->Write(arrayPlanes,sizeof(class Aircraft)*amount);
+			delete f;
+			f=new TFileStream(FilePlanesNumber,fmOpenWrite);
+			f->Write(&amount,sizeof(int));
+			delete f;
+			Edit1->Visible=false;
+			Edit2->Visible=false;
+			Edit3->Visible=false;
+			Label1->Visible=false;
+			FormPlane->Activate();
+			Edit1->Text="";
+			Edit2->Text="";
+			Edit3->Text="";
+		}
+	}
+}
+void __fastcall TFormPlane::Button5Click(TObject *Sender)
+{
+	TFileStream* f;
+	f=new TFileStream(FilePlanesNumber,fmOpenWrite);
+	int amount=0;
+	f->Write(&amount,sizeof(int));
+	delete f;
+	DeleteFile(FilePlanes);
+	f=new TFileStream(FilePlanes,fmCreate);
+	delete f;
+	FormPlane->Activate();
+}
+void __fastcall TFormPlane::Edit1KeyPress(TObject *Sender, System::WideChar &Key)
+{
+	counter++;
+}
+//---------------------------------------------------------------------------
+

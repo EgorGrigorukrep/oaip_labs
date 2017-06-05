@@ -1,0 +1,52 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include "Schedule.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#include <vcl.h>
+Aircraft::Aircraft(){
+	type[0]='\0';
+	year=0;
+	fuel=0;
+}
+/*Aircraft::Aircraft(char* t,int y,int f){
+	int i=0;
+	while(t[i]!='\0'){ type[i]=t[i]; i++;}
+	year=y;
+	fuel=f;
+}    */
+AnsiString Aircraft::getType(){return type;}
+void Aircraft::setType(AnsiString t){ type=t;}
+int Aircraft::getYear(){ return year;}
+void Aircraft::setYear(int y){year=y;}
+int Aircraft::getFuel(){ return fuel;}
+void Aircraft::setFuel(int f){ fuel=f;}
+
+
+Schedule::Schedule(){
+	flightNumber=0;
+	destination[0]='\0';
+	distance=0;
+	beginTimeMinutes=0;
+	beginTimeHours=0;
+	endTimeMinutes=0;
+	endTimeHours=0;
+}
+int Schedule::getFlightNumber(){return flightNumber;}
+void Schedule::setFlightNumber(int fnum){ flightNumber=fnum;}
+AnsiString Schedule::getDestination(){return destination;}
+void Schedule::setDestination(AnsiString dest){ destination=dest;}
+int Schedule::getDistance(){ return distance;}
+void Schedule::setDistance(int dist){ distance=dist;}
+AnsiString Schedule::getPlaneType(){return plane.getType();}
+int Schedule::getPlaneFuel(){return plane.getFuel();}
+void Schedule::setPlane(Aircraft pl){ plane=pl;}
+int Schedule::getBeginTimeMinutes(){return beginTimeMinutes;}
+void Schedule::setBeginTimeMinutes(int btm){ beginTimeMinutes=btm;}
+int Schedule::getBeginTimeHours(){return beginTimeHours;}
+void Schedule::setBeginTimeHours(int bth){ beginTimeHours=bth;}
+int Schedule::getEndTimeHours(){return endTimeHours;}
+void Schedule::setEndTimeHours(int eth){ endTimeHours=eth;}
+int Schedule::getEndTimeMinutes(){return endTimeMinutes;}
+void Schedule::setEndTimeMinutes(int etm){ endTimeMinutes=etm;}

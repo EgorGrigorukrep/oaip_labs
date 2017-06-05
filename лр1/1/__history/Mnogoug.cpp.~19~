@@ -1,0 +1,415 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include <vector>
+#include "UnitStart.h"
+#include "Mnogoug.h"
+#include "UnitMnogoug.h"
+#include "UnitChisloVershin.h"
+#include "UnitParametrsMnogoug.h"
+#include "UnitDraw.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Mnogoug::Mnogoug(){
+	int i;
+	for (i = 0; i < 10; i++) {
+		xkoor[i]=-1;
+		ykoor[i]=-1;
+		dlst[i]=0;
+		plshtr[i]=0;
+	}
+	KolVersh=3;
+}
+
+Mnogoug::Mnogoug (int n1){
+	KolVersh=n1;
+	int i;
+	turnByX=-500;
+	turnByY=-500;
+	angle=0;
+	for (i = 0; i < 10; i++) {
+		xkoor[i]=-1;
+		ykoor[i]=-1;
+		turnedKoorX[i]=-1;
+		turnedKoorY[i]=-1;
+	}
+}
+
+void Mnogoug::vvod(int i){
+	xkoor[i]=StrToInt(FormMnogoug->Edit2->Text)+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10;
+	ykoor[i]=StrToInt(FormMnogoug->Edit3->Text)+10;
+	FormMnogoug->Edit2->Text="0";
+	FormMnogoug->Edit3->Text="0";
+	FormMnogoug->Panel1->Caption=IntToStr(i+2);
+	if (i==2) {
+		FormMnogoug->Label3->Caption="-ей точки: ";
+	}
+	if (i==3) {
+		FormMnogoug->Label3->Caption="-ой точки: ";
+	}
+}
+
+void Mnogoug::ris(){
+	FormMnogoug->Canvas->Pen->Color=clRed;
+	FormMnogoug->Canvas->Pen->Width=2;
+	FormMnogoug->Canvas->MoveTo(xkoor[0],ykoor[0]);
+	if (xkoor[1]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[1],ykoor[1]);
+	if (xkoor[2]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[2],ykoor[2]);
+	if (xkoor[3]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[3],ykoor[3]);
+	if (xkoor[4]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[4],ykoor[4]);
+	if (xkoor[5]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[5],ykoor[5]);
+	if (xkoor[6]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[6],ykoor[6]);
+	if (xkoor[7]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[7],ykoor[7]);
+	if (xkoor[8]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[8],ykoor[8]);
+	if (xkoor[9]!=-1)	FormMnogoug->Canvas->LineTo(xkoor[9],ykoor[9]);
+	FormMnogoug->Canvas->LineTo(xkoor[0],ykoor[0]);
+}
+
+float Mnogoug::LenSt(int i1,int i2){
+	return sqrt(powl(xkoor[i2]-xkoor[i1],2)+powl(ykoor[i2]-ykoor[i1],2));
+}
+
+float Mnogoug::perimetr(){
+	float per=0;
+	if (FormParametrsMnogoug->d1->Visible==true) {
+		per+=StrToFloat(FormParametrsMnogoug->d1->Text);
+		dlst[0]=StrToFloat(FormParametrsMnogoug->d1->Text);
+		if (FormParametrsMnogoug->d2->Visible==true) {
+			per+=StrToFloat(FormParametrsMnogoug->d2->Text);
+			dlst[1]=StrToFloat(FormParametrsMnogoug->d2->Text);
+			if (FormParametrsMnogoug->d3->Visible==true) {
+				per+=StrToFloat(FormParametrsMnogoug->d3->Text);
+				dlst[2]=StrToFloat(FormParametrsMnogoug->d3->Text);
+				if (FormParametrsMnogoug->d4->Visible==true) {
+					per+=StrToFloat(FormParametrsMnogoug->d4->Text);
+					dlst[3]=StrToFloat(FormParametrsMnogoug->d4->Text);
+					if (FormParametrsMnogoug->d5->Visible==true) {
+						per+=StrToFloat(FormParametrsMnogoug->d5->Text);
+						dlst[4]=StrToFloat(FormParametrsMnogoug->d5->Text);
+						if (FormParametrsMnogoug->d6->Visible==true) {
+							per+=StrToFloat(FormParametrsMnogoug->d6->Text);
+							dlst[5]=StrToFloat(FormParametrsMnogoug->d6->Text);
+							if (FormParametrsMnogoug->d7->Visible==true) {
+								per+=StrToFloat(FormParametrsMnogoug->d7->Text);
+								dlst[6]=StrToFloat(FormParametrsMnogoug->d7->Text);
+								if (FormParametrsMnogoug->d8->Visible==true) {
+									per+=StrToFloat(FormParametrsMnogoug->d8->Text);
+									dlst[7]=StrToFloat(FormParametrsMnogoug->d8->Text);
+									if (FormParametrsMnogoug->d9->Visible==true) {
+										per+=StrToFloat(FormParametrsMnogoug->d9->Text);
+										dlst[8]=StrToFloat(FormParametrsMnogoug->d9->Text);
+										if (FormParametrsMnogoug->d10->Visible==true) {
+											per+=StrToFloat(FormParametrsMnogoug->d10->Text);
+											dlst[9]=StrToFloat(FormParametrsMnogoug->d10->Text);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return per;
+}
+
+float Mnogoug::ploshTr(float a,float b,float c){
+	float p=(a+b+c)/2;
+	return  sqrt(p*(p-a)*(p-b)*(p-c));
+}
+
+float Mnogoug::plosh(){
+	float s=0;
+	if (FormParametrsMnogoug->s1->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s1->Text);
+	if (FormParametrsMnogoug->s2->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s2->Text);
+	if (FormParametrsMnogoug->s3->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s3->Text);
+	if (FormParametrsMnogoug->s4->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s4->Text);
+	if (FormParametrsMnogoug->s5->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s5->Text);
+	if (FormParametrsMnogoug->s6->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s6->Text);
+	if (FormParametrsMnogoug->s7->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s7->Text);
+	if (FormParametrsMnogoug->s8->Visible==true) s+=StrToFloat(FormParametrsMnogoug->s8->Text);
+	return s;
+}
+
+float Mnogoug::centerXtr(int x1,int x2,int x3){
+	int xm,xc;
+	if (x1<=x2&&x2<=x3) {
+		xm=x2+(x3-x2)/2;
+		xc=x1+2*(xm-x1)/3;
+	}
+	if (x2<=x1&&x1<=x3) {
+		xm=x1+(x3-x1)/2;
+		xc=x2+2*(xm-x2)/3;
+	}
+	if (x2<=x3&&x3<=x1) {
+		xm=x3+(x1-x3)/2;
+		xc=x2+2*(xm-x2)/3;
+	}
+	if (x1<=x3&&x3<=x2) {
+		xm=x3+(x2-x3)/2;
+		xc=x1+2*(xm-x1)/3;
+	}
+	if (x3<=x1&&x1<=x2) {
+		xm=x1+(x2-x1)/2;
+		xc=x3+2*(xm-x3)/3;
+	}
+	if (x3<=x2&&x2<=x1) {
+		xm=x2+(x1-x2)/2;
+		xc=x3+2*(xm-x3)/3;
+	}
+	return xc;
+}
+
+float Mnogoug::centerYtr(int y1,int y2,int y3){
+	int ym,yc;
+	if (y1<=y2&&y2<=y3) {
+		ym=y2+(y1-y2)/2;
+		yc=y3+2*(ym-y3)/3;
+	}
+	if (y1<=y3&&y3<=y2) {
+		ym=y3+(y1-y3)/2;
+		yc=y2+2*(ym-y2)/3;
+	}
+	if (y2<=y3&&y3<=y1) {
+		ym=y3+(y2-y3)/2;
+		yc=y1+2*(ym-y1)/3;
+	}
+	if (y3<=y1&&y1<=y2) {
+		ym=y1+(y2-y1)/2;
+		yc=y3+2*(ym-y3)/3;
+	}
+	if (y3<=y2&&y2<=y1) {
+		ym=y2+(y3-y2)/2;
+		yc=y1+2*(ym-y1)/3;
+	}
+	if (y2<=y1&&y1<=y3) {
+		ym=y1+(y3-y1)/2;
+		yc=y2+2*(ym-y2)/3;
+	}
+	return yc;
+}
+
+void Mnogoug::centersEntering(){
+	centersX[0]=StrToFloat(FormParametrsMnogoug->cx1->Text);
+	centersX[1]=StrToFloat(FormParametrsMnogoug->cx2->Text);
+	centersX[2]=StrToFloat(FormParametrsMnogoug->cx3->Text);
+	centersX[3]=StrToFloat(FormParametrsMnogoug->cx4->Text);
+	centersX[4]=StrToFloat(FormParametrsMnogoug->cx5->Text);
+	centersX[5]=StrToFloat(FormParametrsMnogoug->cx6->Text);
+	centersX[6]=StrToFloat(FormParametrsMnogoug->cx7->Text);
+	centersX[7]=StrToFloat(FormParametrsMnogoug->cx8->Text);
+	centersY[0]=StrToFloat(FormParametrsMnogoug->cy1->Text);
+	centersY[1]=StrToFloat(FormParametrsMnogoug->cy2->Text);
+	centersY[2]=StrToFloat(FormParametrsMnogoug->cy3->Text);
+	centersY[3]=StrToFloat(FormParametrsMnogoug->cy4->Text);
+	centersY[4]=StrToFloat(FormParametrsMnogoug->cy5->Text);
+	centersY[5]=StrToFloat(FormParametrsMnogoug->cy6->Text);
+	centersY[6]=StrToFloat(FormParametrsMnogoug->cy7->Text);
+	centersY[7]=StrToFloat(FormParametrsMnogoug->cy8->Text);
+	plshtr[0]=StrToFloat(FormParametrsMnogoug->s1->Text);
+	plshtr[1]=StrToFloat(FormParametrsMnogoug->s2->Text);
+	plshtr[2]=StrToFloat(FormParametrsMnogoug->s3->Text);
+	plshtr[3]=StrToFloat(FormParametrsMnogoug->s4->Text);
+	plshtr[4]=StrToFloat(FormParametrsMnogoug->s5->Text);
+	plshtr[5]=StrToFloat(FormParametrsMnogoug->s6->Text);
+	plshtr[6]=StrToFloat(FormParametrsMnogoug->s7->Text);
+	plshtr[7]=StrToFloat(FormParametrsMnogoug->s8->Text);
+}
+
+float Mnogoug::centerMassX(){
+	int i,sumChisl=0,sumZnam=0;
+	for (i = 0; i < 8; i++) {
+		sumChisl+=plshtr[i]*centersX[i];
+	}
+	for (i = 0; i < 8; i++) {
+		sumZnam+=plshtr[i];
+	}
+	return (float)sumChisl/sumZnam;
+}
+
+float Mnogoug::centerMassY(){
+	int i,sumChisl=0,sumZnam=0;
+	for (i = 0; i < 8; i++) {
+		sumChisl+=plshtr[i]*centersY[i];
+	}
+	for (i = 0; i < 8; i++) {
+		sumZnam+=plshtr[i];
+	}
+	return (float)sumChisl/sumZnam;
+}
+
+int Mnogoug::getMoveToX()      			{	return moveToX;}
+void Mnogoug::setMoveToX(int x)			{	moveToX=x;}
+int Mnogoug::getMoveToY()      			{	return moveToY;}
+void Mnogoug::setMoveToY(int y)			{	moveToY=y;}
+int Mnogoug::getWeightCenterX()			{   return weightCenterX;}
+void Mnogoug::setWeightCenterX(int wcx) { 	weightCenterX=wcx;}
+int Mnogoug::getWeightCenterY()			{   return weightCenterY;}
+void Mnogoug::setWeightCenterY(int wcy) { 	weightCenterY=wcy;}
+int Mnogoug::getTurnByX()				{	return turnByX;}
+void Mnogoug::setTurnByX(int tx)        {	turnByX=tx;}
+int Mnogoug::getTurnByY()				{	return turnByY;}
+void Mnogoug::setTurnByY(int ty)        {	turnByY=ty;}
+float Mnogoug::getAngle()				{	return angle;}
+void Mnogoug::setAngle(int a)           {	angle=a*M_PI/180;}
+int Mnogoug::getTurnedKoorX(int i)			{   return turnedKoorX[i];}
+void Mnogoug::setTurnedKoorX(int i,int x)	{ turnedKoorX[i]=x;}
+int Mnogoug::getTurnedKoorY(int i)			{   return turnedKoorY[i];}
+void Mnogoug::setTurnedKoorY(int i,int y)	{ turnedKoorY[i]=y;}
+
+void Mnogoug::movingByX(bool isTurning,int KolVersh){
+	int i;
+	if (weightCenterX<moveToX) {
+		for (i = 0; i < KolVersh; i++) {
+			if (xkoor[i]!=-1) {
+				xkoor[i]++;
+			}
+		}
+		weightCenterX++;
+	}
+	else if (weightCenterX>moveToX){
+		for (i = 0; i < KolVersh; i++) {
+			xkoor[i]--;
+			if (xkoor[i] == FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10) {
+				if (isTurning==false) {
+					FormMnogoug->Timer1->Enabled=false;
+					FormMnogoug->Timer2->Enabled=true;
+				}
+				if (isTurning==true){
+					FormMnogoug->Timer3->Enabled=false;
+					FormMnogoug->Timer4->Enabled=true;
+				}
+			}
+		}
+		weightCenterX--;
+	}
+	drawMnogoug();
+	ris();
+	if (isTurning==true) {
+		FormMnogoug->Canvas->MoveTo(weightCenterX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,weightCenterY+10);
+		FormMnogoug->Canvas->LineTo(turnByX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,turnByY+10);
+	}
+	FormMnogoug->Canvas->MoveTo(weightCenterX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,weightCenterY+10);
+	FormMnogoug->Canvas->LineTo(moveToX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,moveToY+10);
+}
+
+void Mnogoug::movingByY(bool isTurning,int KolVersh){
+	int i;
+	if (weightCenterY<moveToY) {
+		for (i = 0; i < KolVersh; i++) {
+			if (ykoor[i]!=-1) {
+				ykoor[i]++;
+			}
+		}
+		weightCenterY++;
+	}
+	else if (weightCenterY>moveToY){
+		for (i = 0; i < KolVersh; i++) {
+			ykoor[i]--;
+			if (ykoor[i]==10) {
+				FormMnogoug->Timer2->Enabled=false;
+				FormMnogoug->Timer4->Enabled=false;
+			}
+		}
+		weightCenterY--;
+	}
+	drawMnogoug();
+	ris();
+	if (isTurning==true) {
+		FormMnogoug->Canvas->MoveTo(weightCenterX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,weightCenterY+10);
+		FormMnogoug->Canvas->LineTo(turnByX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,turnByY+10);
+	}
+	FormMnogoug->Canvas->MoveTo(weightCenterX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,weightCenterY+10);
+	FormMnogoug->Canvas->LineTo(moveToX+FormMnogoug->Shape1->Left+FormMnogoug->Shape1->Width+10,moveToY+10);
+}
+
+void Mnogoug::turning(){
+	int dx,dy;
+	float rast=sqrt(powl(turnByX-weightCenterX,2)+powl(turnByY-weightCenterY,2));
+	if (weightCenterX<=turnByX && weightCenterY<=turnByY){
+		int a=turnByY-weightCenterY;
+		float a1=asin(a/rast),a2=angle-a1;
+		dx=rast*(cos(a1)-cos(a2));
+		dy=rast*(sin(a1)+sin(a2));
+		moveToX=weightCenterX+dx; moveToY=weightCenterY+dy;
+	}
+	if (weightCenterX>=turnByX && weightCenterY<=turnByY) {
+		int c=weightCenterX-turnByX;
+		float a1=asin(c/rast),a2=angle-a1;
+		dx=rast*(sin(a1)+sin(a2));
+		dy=rast*(cos(a1)-cos(a2));
+		moveToX=weightCenterX-dx; moveToY=weightCenterY+dy;
+	}
+	if (weightCenterX>=turnByX && weightCenterY>=turnByY){
+		int a=weightCenterY-turnByY;
+		float a1=asin(a/rast),a2=angle-a1;
+		dx=rast*(cos(a1)-cos(a2));
+		dy=rast*(sin(a1)+sin(a2));
+		moveToX=weightCenterX-dx; moveToY=weightCenterY-dy;
+	}
+	if (weightCenterX<=turnByX && weightCenterY>=turnByY) {
+		int c=turnByX-weightCenterX;
+		float a1=asin(c/rast),a2=angle-a1;
+		dx=rast*(sin(a1)+sin(a2));
+		dy=rast*(cos(a1)-cos(a2));
+		moveToX=weightCenterX+dx; moveToY=weightCenterY-dy;
+	}
+}
+
+void Mnogoug::turningVersh(){
+	int dx,dy,i;
+	float rast=sqrt(powl(turnByX-weightCenterX,2)+powl(turnByY-weightCenterY,2));
+	for (i = 0; i < 10; i++) {
+		if (xkoor[i]>0 && ykoor[i]>0){
+			if (weightCenterX<turnByX && weightCenterY<turnByY){
+				int a=turnByY-weightCenterY;
+				float a1=asin(a/rast),a2=angle-a1;
+				dx=rast*(cos(a1)-cos(a2));
+				dy=rast*(sin(a1)+sin(a2));
+				turnedKoorX[i]=xkoor[i]+dx; turnedKoorY[i]=ykoor[i]+dy;
+			}
+			if (weightCenterX>turnByX && weightCenterY<turnByY) {
+				int c=weightCenterX-turnByX;
+				float a1=asin(c/rast),a2=angle-a1;
+				dx=rast*(sin(a1)+sin(a2));
+				dy=rast*(cos(a1)-cos(a2));
+				turnedKoorX[i]=xkoor[i]-dx; turnedKoorY[i]=ykoor[i]+dy;
+			}
+			if (weightCenterX>turnByX && weightCenterY>turnByY){
+				int a=weightCenterY-turnByY;
+				float a1=asin(a/rast),a2=angle-a1;
+				dx=rast*(cos(a1)-cos(a2));
+				dy=rast*(sin(a1)+sin(a2));
+				turnedKoorX[i]=xkoor[i]-dx; turnedKoorY[i]=ykoor[i]-dy;
+			}
+			if (weightCenterX<turnByX && weightCenterY>turnByY) {
+				int c=turnByX-weightCenterX;
+				float a1=asin(c/rast),a2=angle-a1;
+				dx=rast*(sin(a1)+sin(a2));
+				dy=rast*(cos(a1)-cos(a2));
+				turnedKoorX[i]=xkoor[i]+dx; turnedKoorY[i]=ykoor[i]-dy;
+			}
+		}
+	}
+}
+
+void Mnogoug::changingSize(float k,int KolVersh){
+	int dx,dy,i,pointOfStart=0,min=ykoor[0];
+	for (i = 1; i < KolVersh; i++) {
+		if (ykoor[i]<min) {
+			min=ykoor[i];
+			pointOfStart=i;
+		}
+	}
+	for (i = 0; i < KolVersh; i++) {
+		dx=xkoor[i]-xkoor[pointOfStart];
+		dy=ykoor[i]-ykoor[pointOfStart];
+		dx*=k;	dy*=k;
+		xkoor[i]=xkoor[pointOfStart]+dx;
+		ykoor[i]=ykoor[pointOfStart]+dy;
+	}
+	drawMnogoug();
+	ris();
+
+}

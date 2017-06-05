@@ -1,0 +1,1262 @@
+object FormParametrsMnogoug: TFormParametrsMnogoug
+  Left = 0
+  Top = 0
+  Caption = 'FormParametrsMnogoug'
+  ClientHeight = 412
+  ClientWidth = 1097
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -21
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 62
+    Top = 15
+    Width = 56
+    Height = 25
+    Caption = #1058#1086#1095#1082#1080
+  end
+  object Label2: TLabel
+    Left = 60
+    Top = 46
+    Width = 12
+    Height = 25
+    Caption = 'X'
+  end
+  object Label3: TLabel
+    Left = 124
+    Top = 46
+    Width = 12
+    Height = 25
+    Caption = 'Y'
+  end
+  object A1: TLabel
+    Left = 8
+    Top = 75
+    Width = 31
+    Height = 25
+    Caption = 'A1:'
+    Visible = False
+  end
+  object z1: TLabel
+    Left = 96
+    Top = 75
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object A2: TLabel
+    Left = 8
+    Top = 111
+    Width = 31
+    Height = 25
+    Caption = 'A2:'
+    Visible = False
+  end
+  object A3: TLabel
+    Left = 8
+    Top = 142
+    Width = 31
+    Height = 25
+    Caption = 'A3:'
+    Visible = False
+  end
+  object A4: TLabel
+    Left = 8
+    Top = 173
+    Width = 31
+    Height = 25
+    Caption = 'A4:'
+    Visible = False
+  end
+  object A5: TLabel
+    Left = 8
+    Top = 204
+    Width = 31
+    Height = 25
+    Caption = 'A5:'
+    Visible = False
+  end
+  object A6: TLabel
+    Left = 8
+    Top = 235
+    Width = 31
+    Height = 25
+    Caption = 'A6:'
+    Visible = False
+  end
+  object A7: TLabel
+    Left = 8
+    Top = 266
+    Width = 31
+    Height = 25
+    Caption = 'A7:'
+    Visible = False
+  end
+  object A8: TLabel
+    Left = 8
+    Top = 297
+    Width = 31
+    Height = 25
+    Caption = 'A8:'
+    Visible = False
+  end
+  object A9: TLabel
+    Left = 8
+    Top = 328
+    Width = 31
+    Height = 25
+    Caption = 'A9:'
+    Visible = False
+  end
+  object A10: TLabel
+    Left = -3
+    Top = 359
+    Width = 42
+    Height = 25
+    Caption = 'A10:'
+    Visible = False
+  end
+  object z2: TLabel
+    Left = 96
+    Top = 111
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z3: TLabel
+    Left = 96
+    Top = 142
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z4: TLabel
+    Left = 96
+    Top = 173
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z5: TLabel
+    Left = 96
+    Top = 204
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z6: TLabel
+    Left = 96
+    Top = 235
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z7: TLabel
+    Left = 96
+    Top = 266
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z8: TLabel
+    Left = 96
+    Top = 297
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z9: TLabel
+    Left = 96
+    Top = 328
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object z10: TLabel
+    Left = 96
+    Top = 359
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 915
+    Top = 11
+    Width = 163
+    Height = 57
+    Caption = #1055#1077#1088#1080#1084#1077#1090#1088' '#1084#1085#1086#1075#1086#1091#1075#1086#1083#1100#1085#1080#1082#1072':'
+    WordWrap = True
+  end
+  object Shape1: TShape
+    Left = 339
+    Top = -6
+    Width = 7
+    Height = 423
+    Brush.Color = clBlack
+  end
+  object Label5: TLabel
+    Left = 915
+    Top = 113
+    Width = 158
+    Height = 57
+    Caption = #1055#1083#1086#1097#1072#1076#1100' '#1084#1085#1086#1075#1086#1091#1075#1086#1083#1100#1085#1080#1082#1072':'
+    WordWrap = True
+  end
+  object dl1: TLabel
+    Left = 191
+    Top = 80
+    Width = 55
+    Height = 25
+    Caption = 'A1A2:'
+    Visible = False
+  end
+  object Shape2: TShape
+    Left = 167
+    Top = -3
+    Width = 7
+    Height = 423
+    Brush.Color = clBlack
+  end
+  object dl2: TLabel
+    Left = 191
+    Top = 111
+    Width = 55
+    Height = 25
+    Caption = 'A2A3:'
+    Visible = False
+  end
+  object dl3: TLabel
+    Left = 191
+    Top = 142
+    Width = 55
+    Height = 25
+    Caption = 'A3A4:'
+    Visible = False
+  end
+  object dl4: TLabel
+    Left = 191
+    Top = 173
+    Width = 55
+    Height = 25
+    Caption = 'A4A5:'
+    Visible = False
+  end
+  object dl5: TLabel
+    Left = 191
+    Top = 204
+    Width = 55
+    Height = 25
+    Caption = 'A5A6:'
+    Visible = False
+  end
+  object dl6: TLabel
+    Left = 191
+    Top = 235
+    Width = 55
+    Height = 25
+    Caption = 'A6A7:'
+    Visible = False
+  end
+  object dl7: TLabel
+    Left = 191
+    Top = 266
+    Width = 55
+    Height = 25
+    Caption = 'A7A8:'
+    Visible = False
+  end
+  object dl8: TLabel
+    Left = 191
+    Top = 297
+    Width = 55
+    Height = 25
+    Caption = 'A8A9:'
+    Visible = False
+  end
+  object dl9: TLabel
+    Left = 180
+    Top = 328
+    Width = 66
+    Height = 25
+    Caption = 'A9A10:'
+    Visible = False
+  end
+  object dl10: TLabel
+    Left = 180
+    Top = 359
+    Width = 66
+    Height = 25
+    Caption = 'A10A1:'
+    Visible = False
+  end
+  object Label16: TLabel
+    Left = 180
+    Top = 15
+    Width = 145
+    Height = 25
+    Caption = #1044#1083#1080#1085#1099' '#1089#1090#1086#1088#1086#1085':'
+  end
+  object sl1: TLabel
+    Left = 535
+    Top = 114
+    Width = 79
+    Height = 25
+    Caption = 'A1A2A3:'
+    Color = clBtnFace
+    ParentColor = False
+    Visible = False
+  end
+  object sl2: TLabel
+    Left = 536
+    Top = 145
+    Width = 79
+    Height = 25
+    Caption = 'A1A3A4:'
+    Visible = False
+  end
+  object sl3: TLabel
+    Left = 536
+    Top = 176
+    Width = 79
+    Height = 25
+    Caption = 'A1A4A5:'
+    Visible = False
+  end
+  object sl4: TLabel
+    Left = 536
+    Top = 207
+    Width = 79
+    Height = 25
+    Caption = 'A1A5A6:'
+    Visible = False
+  end
+  object sl5: TLabel
+    Left = 536
+    Top = 238
+    Width = 79
+    Height = 25
+    Caption = 'A1A6A7:'
+    Visible = False
+  end
+  object sl6: TLabel
+    Left = 536
+    Top = 269
+    Width = 79
+    Height = 25
+    Caption = 'A1A7A8:'
+    Visible = False
+  end
+  object sl7: TLabel
+    Left = 536
+    Top = 300
+    Width = 79
+    Height = 25
+    Caption = 'A1A8A9:'
+    Visible = False
+  end
+  object sl8: TLabel
+    Left = 536
+    Top = 331
+    Width = 90
+    Height = 25
+    Caption = 'A1A9A10:'
+    Visible = False
+  end
+  object Shape3: TShape
+    Left = 523
+    Top = -11
+    Width = 7
+    Height = 423
+    Brush.Color = clBlack
+  end
+  object Label6: TLabel
+    Left = 536
+    Top = 8
+    Width = 166
+    Height = 75
+    Caption = #1055#1083#1086#1097#1072#1076#1080' '#1090#1088#1077#1091'- '#1075#1086#1083#1100#1085#1080#1082#1086#1074','#1086#1073#1088#1072'- '#1079#1091#1102#1097#1080#1093' '#1092#1080#1075#1091#1088#1091
+    WordWrap = True
+  end
+  object rl1: TLabel
+    Left = 360
+    Top = 114
+    Width = 55
+    Height = 25
+    Caption = 'A1A3:'
+    Visible = False
+  end
+  object rl2: TLabel
+    Left = 360
+    Top = 145
+    Width = 55
+    Height = 25
+    Caption = 'A1A4:'
+    Visible = False
+  end
+  object rl3: TLabel
+    Left = 360
+    Top = 176
+    Width = 55
+    Height = 25
+    Caption = 'A1A5:'
+    Visible = False
+  end
+  object rl4: TLabel
+    Left = 360
+    Top = 210
+    Width = 55
+    Height = 25
+    Caption = 'A1A6:'
+    Visible = False
+  end
+  object rl5: TLabel
+    Left = 360
+    Top = 241
+    Width = 55
+    Height = 25
+    Caption = 'A1A7:'
+    Visible = False
+  end
+  object rl6: TLabel
+    Left = 360
+    Top = 272
+    Width = 55
+    Height = 25
+    Caption = 'A1A8:'
+    Visible = False
+  end
+  object rl7: TLabel
+    Left = 360
+    Top = 303
+    Width = 55
+    Height = 25
+    Caption = 'A1A9:'
+    Visible = False
+  end
+  object rl8: TLabel
+    Left = 360
+    Top = 334
+    Width = 66
+    Height = 25
+    Caption = 'A1A10:'
+    Visible = False
+  end
+  object Shape4: TShape
+    Left = 708
+    Top = -11
+    Width = 7
+    Height = 423
+    Brush.Color = clBlack
+  end
+  object Label15: TLabel
+    Left = 352
+    Top = -1
+    Width = 165
+    Height = 75
+    Caption = #1056#1072#1089#1089#1090#1086#1103#1085#1080#1103' '#1086#1090' '#1040'1 '#1076#1086' '#1090#1086#1095#1077#1082' '#1092#1080#1075#1091#1088#1099
+    WordWrap = True
+  end
+  object Label7: TLabel
+    Left = 913
+    Top = 215
+    Width = 165
+    Height = 56
+    Caption = #1050#1086#1086#1088#1076#1080#1085#1072#1090#1099' '#1094#1077#1085#1090#1088#1072' '#1084#1072#1089#1089
+    WordWrap = True
+  end
+  object Label8: TLabel
+    Left = 1002
+    Top = 308
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object Label9: TLabel
+    Left = 943
+    Top = 277
+    Width = 12
+    Height = 25
+    Caption = 'X'
+  end
+  object Label10: TLabel
+    Left = 1029
+    Top = 277
+    Width = 12
+    Height = 25
+    Caption = 'Y'
+  end
+  object Label11: TLabel
+    Left = 721
+    Top = 8
+    Width = 158
+    Height = 60
+    Caption = #1062#1077#1085#1090#1088#1099' '#1084#1072#1089#1089' '#1090#1088#1077#1091#1075#1086#1083#1100#1085#1080#1082#1086#1074
+    WordWrap = True
+  end
+  object Label12: TLabel
+    Left = 778
+    Top = 77
+    Width = 12
+    Height = 25
+    Caption = 'X'
+  end
+  object Label13: TLabel
+    Left = 842
+    Top = 77
+    Width = 12
+    Height = 25
+    Caption = 'Y'
+  end
+  object C1: TLabel
+    Left = 726
+    Top = 106
+    Width = 31
+    Height = 25
+    Caption = #1057'1:'
+    Visible = False
+  end
+  object zs1: TLabel
+    Left = 814
+    Top = 106
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object C2: TLabel
+    Left = 726
+    Top = 142
+    Width = 31
+    Height = 25
+    Caption = #1057'2:'
+    Visible = False
+  end
+  object C3: TLabel
+    Left = 726
+    Top = 173
+    Width = 31
+    Height = 25
+    Caption = #1057'3:'
+    Visible = False
+  end
+  object C4: TLabel
+    Left = 726
+    Top = 204
+    Width = 31
+    Height = 25
+    Caption = #1057'4:'
+    Visible = False
+  end
+  object C5: TLabel
+    Left = 726
+    Top = 235
+    Width = 31
+    Height = 25
+    Caption = #1057'5:'
+    Visible = False
+  end
+  object C6: TLabel
+    Left = 726
+    Top = 266
+    Width = 31
+    Height = 25
+    Caption = #1057'6:'
+    Visible = False
+  end
+  object C7: TLabel
+    Left = 726
+    Top = 297
+    Width = 31
+    Height = 25
+    Caption = #1057'7:'
+    Visible = False
+  end
+  object C8: TLabel
+    Left = 726
+    Top = 328
+    Width = 31
+    Height = 25
+    Caption = #1057'8:'
+    Visible = False
+  end
+  object zs2: TLabel
+    Left = 814
+    Top = 137
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs3: TLabel
+    Left = 814
+    Top = 173
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs4: TLabel
+    Left = 814
+    Top = 204
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs5: TLabel
+    Left = 814
+    Top = 235
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs6: TLabel
+    Left = 814
+    Top = 266
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs7: TLabel
+    Left = 814
+    Top = 297
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object zs8: TLabel
+    Left = 814
+    Top = 328
+    Width = 7
+    Height = 25
+    Caption = ';'
+    Visible = False
+  end
+  object Shape5: TShape
+    Left = 885
+    Top = -11
+    Width = 7
+    Height = 423
+    Brush.Color = clBlack
+  end
+  object X1: TEdit
+    Left = 38
+    Top = 77
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 0
+    Visible = False
+  end
+  object Y1: TEdit
+    Left = 109
+    Top = 77
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 1
+    Visible = False
+  end
+  object X2: TEdit
+    Left = 38
+    Top = 108
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 2
+    Visible = False
+  end
+  object X3: TEdit
+    Left = 38
+    Top = 142
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 3
+    Visible = False
+  end
+  object X4: TEdit
+    Left = 38
+    Top = 173
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 4
+    Visible = False
+  end
+  object X5: TEdit
+    Left = 38
+    Top = 204
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 5
+    Visible = False
+  end
+  object X6: TEdit
+    Left = 38
+    Top = 235
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 6
+    Visible = False
+  end
+  object X7: TEdit
+    Left = 38
+    Top = 266
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 7
+    Visible = False
+  end
+  object X8: TEdit
+    Left = 38
+    Top = 297
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 8
+    Visible = False
+  end
+  object X9: TEdit
+    Left = 38
+    Top = 328
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 9
+    Visible = False
+  end
+  object X10: TEdit
+    Left = 38
+    Top = 359
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 10
+    Visible = False
+  end
+  object Y2: TEdit
+    Left = 109
+    Top = 108
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 11
+    Visible = False
+  end
+  object Y3: TEdit
+    Left = 109
+    Top = 142
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 12
+    Visible = False
+  end
+  object Y4: TEdit
+    Left = 109
+    Top = 173
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 13
+    Visible = False
+  end
+  object Y5: TEdit
+    Left = 109
+    Top = 204
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 14
+    Visible = False
+  end
+  object Y6: TEdit
+    Left = 109
+    Top = 235
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 15
+    Visible = False
+  end
+  object Y7: TEdit
+    Left = 109
+    Top = 266
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 16
+    Visible = False
+  end
+  object Y8: TEdit
+    Left = 109
+    Top = 297
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 17
+    Visible = False
+  end
+  object Y9: TEdit
+    Left = 109
+    Top = 328
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 18
+    Visible = False
+  end
+  object Y10: TEdit
+    Left = 109
+    Top = 359
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 19
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 979
+    Top = 368
+    Width = 75
+    Height = 44
+    Caption = #1053#1072#1079#1072#1076
+    TabOrder = 20
+    OnClick = Button1Click
+  end
+  object d1: TEdit
+    Left = 252
+    Top = 77
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 21
+    Visible = False
+  end
+  object d2: TEdit
+    Left = 252
+    Top = 108
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 22
+    Visible = False
+  end
+  object d3: TEdit
+    Left = 252
+    Top = 142
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 23
+    Visible = False
+  end
+  object d4: TEdit
+    Left = 252
+    Top = 173
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 24
+    Visible = False
+  end
+  object d5: TEdit
+    Left = 252
+    Top = 204
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 25
+    Visible = False
+  end
+  object d6: TEdit
+    Left = 252
+    Top = 235
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 26
+    Visible = False
+  end
+  object d7: TEdit
+    Left = 252
+    Top = 266
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 27
+    Visible = False
+  end
+  object d8: TEdit
+    Left = 252
+    Top = 297
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 28
+    Visible = False
+  end
+  object d9: TEdit
+    Left = 252
+    Top = 328
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 29
+    Visible = False
+  end
+  object d10: TEdit
+    Left = 252
+    Top = 359
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 30
+    Visible = False
+  end
+  object Edit1: TEdit
+    Left = 915
+    Top = 74
+    Width = 139
+    Height = 33
+    Enabled = False
+    TabOrder = 31
+  end
+  object Edit2: TEdit
+    Left = 915
+    Top = 176
+    Width = 139
+    Height = 33
+    Enabled = False
+    TabOrder = 32
+  end
+  object s1: TEdit
+    Left = 620
+    Top = 108
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 33
+    Visible = False
+  end
+  object s2: TEdit
+    Left = 620
+    Top = 138
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 34
+    Visible = False
+  end
+  object s3: TEdit
+    Left = 620
+    Top = 173
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 35
+    Visible = False
+  end
+  object s4: TEdit
+    Left = 620
+    Top = 204
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 36
+    Visible = False
+  end
+  object s5: TEdit
+    Left = 620
+    Top = 235
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 37
+    Visible = False
+  end
+  object s6: TEdit
+    Left = 620
+    Top = 266
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 38
+    Visible = False
+  end
+  object s7: TEdit
+    Left = 620
+    Top = 297
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 39
+    Visible = False
+  end
+  object s8: TEdit
+    Left = 620
+    Top = 328
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 40
+    Visible = False
+  end
+  object r1: TEdit
+    Left = 421
+    Top = 108
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 41
+    Visible = False
+  end
+  object r2: TEdit
+    Left = 421
+    Top = 139
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 42
+    Visible = False
+  end
+  object r3: TEdit
+    Left = 421
+    Top = 173
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 43
+    Visible = False
+  end
+  object r4: TEdit
+    Left = 421
+    Top = 204
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 44
+    Visible = False
+  end
+  object r5: TEdit
+    Left = 421
+    Top = 235
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 45
+    Visible = False
+  end
+  object r6: TEdit
+    Left = 421
+    Top = 266
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 46
+    Visible = False
+  end
+  object r7: TEdit
+    Left = 421
+    Top = 297
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 47
+    Visible = False
+  end
+  object r8: TEdit
+    Left = 421
+    Top = 328
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 48
+    Visible = False
+  end
+  object Edit3: TEdit
+    Left = 915
+    Top = 308
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 49
+    Visible = False
+  end
+  object Edit4: TEdit
+    Left = 1008
+    Top = 308
+    Width = 81
+    Height = 33
+    Enabled = False
+    TabOrder = 50
+    Visible = False
+  end
+  object cx1: TEdit
+    Left = 756
+    Top = 108
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 51
+    Visible = False
+  end
+  object cy1: TEdit
+    Left = 827
+    Top = 108
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 52
+    Visible = False
+  end
+  object cx2: TEdit
+    Left = 756
+    Top = 139
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 53
+    Visible = False
+  end
+  object cx3: TEdit
+    Left = 756
+    Top = 173
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 54
+    Visible = False
+  end
+  object cx4: TEdit
+    Left = 756
+    Top = 204
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 55
+    Visible = False
+  end
+  object cx5: TEdit
+    Left = 756
+    Top = 235
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 56
+    Visible = False
+  end
+  object cx6: TEdit
+    Left = 756
+    Top = 266
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 57
+    Visible = False
+  end
+  object cx7: TEdit
+    Left = 756
+    Top = 297
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 58
+    Visible = False
+  end
+  object cx8: TEdit
+    Left = 756
+    Top = 328
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 59
+    Visible = False
+  end
+  object cy2: TEdit
+    Left = 827
+    Top = 139
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 60
+    Visible = False
+  end
+  object cy3: TEdit
+    Left = 827
+    Top = 173
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 61
+    Visible = False
+  end
+  object cy4: TEdit
+    Left = 827
+    Top = 204
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 62
+    Visible = False
+  end
+  object cy5: TEdit
+    Left = 827
+    Top = 235
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 63
+    Visible = False
+  end
+  object cy6: TEdit
+    Left = 827
+    Top = 266
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 64
+    Visible = False
+  end
+  object cy7: TEdit
+    Left = 827
+    Top = 297
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 65
+    Visible = False
+  end
+  object cy8: TEdit
+    Left = 827
+    Top = 328
+    Width = 52
+    Height = 33
+    Enabled = False
+    TabOrder = 66
+    Visible = False
+  end
+end

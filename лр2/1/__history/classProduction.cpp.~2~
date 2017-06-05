@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "classProduction.h"
+#include <iostream.h>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+Production::Production(){
+	name[0]='\0';
+	amount=0;
+	numberOfCEH=0;
+}
+Production::Production(const char* n,int a, int number){
+	int i=0;
+	while(n[i]!='\0'){
+		name[i]=n[i];
+	}
+	amount=a;
+	numberOfCEH=number;
+}
+char* Production::getName(){ return name;}
+void Production::setName(){
+	fgets(name,19,stdin);
+}
+void Production::setNamePrm(char* a){
+	int i=0;
+	while(a[i]!='\0'){
+		name[i]=a[i];
+	}
+}
+int Production::getAmount(){ return amount;}
+void Production::setAmount() { cin>>amount;}
+void Production::setAmountPrm(int a){ amount=a;}
+int Production::getNumberOfCEH(){return numberOfCEH;}
+void Production::setNumberOfCEH(){ cin>>numberOfCEH;}
+void Production::setNumberOfCEHPrm(int n) {numberOfCEH=n;}

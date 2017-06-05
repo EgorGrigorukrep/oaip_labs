@@ -1,0 +1,48 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Form.h"
+#include "UnitList.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+List list;
+bool wasFirst=false;
+
+void __fastcall TForm1::ButtonAddClick(TObject *Sender)
+{
+	if (wasFirst==false) {
+		list.addFirstElement(Edit1->Text,Edit2->Text.ToInt(),Edit3->Text.ToInt());
+		wasFirst=true;
+	}
+	else list.addElement(Edit1->Text,Edit2->Text.ToInt(),Edit3->Text.ToInt());
+	Edit1->Text="";
+	Edit2->Text="";
+	Edit3->Text="";
+	ButtonShow->Click();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ButtonShowClick(TObject *Sender)
+{
+	if (StringGrid1->Cells[0][6]!="") {
+		StringGrid1->RowCount++;
+	}
+	if (StringGrid1->RowCount>7) {
+		StringGrid1->ScrollBars=ssVertical;
+	}
+	list.showList();
+}
+//---------------------------------------------------------------------------
+
+

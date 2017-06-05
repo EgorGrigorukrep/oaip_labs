@@ -1,0 +1,141 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "UnitStart.h"
+#include "Circ.h"
+#include "UnitCircle.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+int x=0,y=0,r=0,xkon,ykon;
+float s=0,l=0;
+int *px=&x,*py=&y,*pr=&r;
+
+TFormCircle *FormCircle;
+//---------------------------------------------------------------------------
+__fastcall TFormCircle::TFormCircle(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormCircle::Button1Click(TObject *Sender)
+{   bool p=1,p1=1;
+	draw();
+	if (FormCircle->Edit1->Text=="") {
+		ShowMessage("Введите X!!!");
+		x=0; p1=0;
+	}
+	else x=StrToInt(FormCircle->Edit1->Text)+10;
+	if (FormCircle->Edit2->Text=="") {
+		ShowMessage("Введите Y!!!");
+		y=0; p1=0;
+	}
+	else y=StrToInt(FormCircle->Edit2->Text)+10;
+	if (FormCircle->Edit3->Text=="") {
+		ShowMessage("Введите радиус!!!");
+		r=0; p1=0;
+	}
+	else r=StrToInt(FormCircle->Edit3->Text);
+	if (p1==1) {
+		if (x-10<r) {
+			ShowMessage("Фигура выйдет за рамку!\nВведите значение X больше, чем значение R.");
+			Edit1->Text="";
+			p=0;
+		}
+		if (y-10<r) {
+			ShowMessage("Фигура выйдет за рамку!\nВведите значение Y больше, чем значение R.");
+			Edit2->Text="";
+			p=0;
+		}
+		if (p==1){
+			x+=Shape1->Left+Shape1->Width;
+			Circ ob1(px,py,pr);
+			ob1.ris();
+		}
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::Button2Click(TObject *Sender)
+{
+	Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::Button3Click(TObject *Sender)
+{
+	Circ ob1(px,py,pr);
+	s=ob1.plosh();
+	l=ob1.perim();
+	ShowMessage("Математические параметры фигуры:\n\nПлощадь S="+FloatToStr(s)+"\nДлина дуги L="+FloatToStr(l)+"\nКоординаты центра масс: x="+IntToStr(x-Shape1->Left-Shape1->Width-10)+", y="+IntToStr(y-10));
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::Button4Click(TObject *Sender)
+{   bool p=1,p1=1;
+	if (Edit3->Text=="") {
+		ShowMessage("Введите радиус!!!");
+		r=0; p1=0;
+	}
+	else r=StrToInt(Edit3->Text);
+	if (Edit4->Text=="") {
+		ShowMessage("Введите X1!!!");
+		xkon=0; p1=0;
+	}
+	else xkon=StrToInt(Edit4->Text)+10;
+	if (Edit5->Text=="") {
+		ShowMessage("Введите Y1!!!");
+		ykon=0; p1=0;
+	}
+	else ykon=StrToInt(Edit5->Text)+10;
+	if (p1==1) {
+		if (xkon-10<r) {
+			ShowMessage("Фигура выйдет за рамку!\nВведите значение X1 больше, чем значение R.");
+			Edit4->Text="";
+			p=0;
+		}
+		if (ykon-10<r) {
+			ShowMessage("Фигура выйдет за рамку!\nВведите значение Y1 больше, чем значение R.");
+			Edit5->Text="";
+			p=0;
+		}
+		if (p==1) {
+			xkon+=Shape1->Left+Shape1->Width;
+			Timer1->Enabled=true;
+		}
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::Timer1Timer(TObject *Sender)
+{
+	bool p;
+	Circ ob1(px,py,pr);
+	p=ob1.peremeshX(xkon);
+	if (p==true) {
+		Timer1->Enabled=false;
+		Timer2->Enabled=true;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormCircle::Timer2Timer(TObject *Sender)
+{
+	bool p;
+	Circ ob1(px,py,pr);
+	p=ob1.peremeshY(ykon);
+	if (p==true) {
+		Timer2->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::Button5Click(TObject *Sender)
+{
+	FormStart->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCircle::FormMouseMove(TObject *Sender, TShiftState Shift, int X,
+          int Y)
+{
+	draw();
+}
+//---------------------------------------------------------------------------
+

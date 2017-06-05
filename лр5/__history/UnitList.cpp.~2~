@@ -1,0 +1,50 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UnitList.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+List::List(): Queue(){};
+
+void List::addItem(Item* item){
+	if (Head==NULL && Tail==NULL) {
+		Head=Tail=item;
+	}
+	else {
+		Tail->next=item;
+		item->previous=Tail;
+		Tail=item;
+    }
+}
+
+Item* List::findInList(int number){
+	Item* temp=Head;
+	while (temp!=NULL){
+		if (temp->number==number){
+			return temp;
+		}
+		temp=temp->next;
+	}
+	return NULL;
+}
+
+void List::deleteItem(Item* item){
+	/*if (item==NULL) {
+		return;
+	} */
+
+	if (item->next==NULL && item->previous!=NULL) {
+		item->previous->next=NULL;
+	}
+	else if (item->previous==NULL && item->next!=NULL) {
+		item->next->previous=NULL;
+	}
+	else if (item->next!=NULL && item->previous!=NULL) {
+		item->previous->next=item->next;
+		item->next->previous=item->previous;
+	}
+
+	delete item;
+}

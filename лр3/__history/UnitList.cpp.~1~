@@ -1,0 +1,46 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UnitList.h"
+#include "Form.h"
+#include <vcl.h>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+List::List(AnsiString name, int amount, int cehNumber){
+	Head=new ListElement;
+	First=Head;
+	Head->Name=name;
+	Head->Amount=amount;
+	Head->CehNumber=cehNumber;
+	Head->Next=NULL;
+}
+
+List::~List(){
+	while(Head->Next!=NULL){
+		ListElement *temp;
+		temp=Head;
+		Head=Head->Next;
+		delete temp;
+	}
+	delete Head;
+}
+
+void List::addElement(AnsiString name, int amount, int cehNumber){
+	ListElement element=new ListElement;
+	element->Name=name;
+	element->Amount=amount;
+	element->CehNumber=cehNumber;
+	element->Next=NULL;
+	while (Head->Next!=NULL){
+		Head=Head->Next;
+	}
+	Head->Next=element;
+}
+
+void List::showList(){
+	Head=First;
+	while (Head->Next!=NULL){
+    	///////
+	}
+}
